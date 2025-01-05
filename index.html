@@ -3,53 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>360° Product Viewer</title>
+  <title>Hover to Rotate 3D Model</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    .container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    model-viewer {
-      width: 80%;
-      height: 500px;
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>360° View of Product</h1>
+    <h1>DOMINO Bedside table</h1>
     <model-viewer
       src="./tn_domino.glb"
       alt="3D view of the furniture"
-      auto-rotate
-      auto-rotate-delay="1"
-      rotation-per-second="0.1"
-      camera-orbit="30deg 45deg 2m"
+      camera-orbit="30deg 70deg 2m"
       camera-controls
-      ar
       environment-image="neutral"
-      shadow-intensity="5"
+      auto-rotate-delay="0"
+      shadow-intensity="1"
+      id="product-viewer"
     ></model-viewer>
   </div>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

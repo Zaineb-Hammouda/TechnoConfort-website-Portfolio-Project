@@ -1,0 +1,37 @@
+/* General Reset */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+/* Center the Content */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Title Styling */
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Model Viewer Styling */
+model-viewer {
+  width: 80%;
+  height: 500px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+model-viewer:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}

@@ -17,15 +17,23 @@ body {
 
 /* Title Styling */
 h1 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: 24px;
   color: #333;
+  padding: 10px 60px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 8px rgba(35, 35, 35, 0.4);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 /* Model Viewer Styling */
 model-viewer {
   width: 80%;
   height: 500px;
-  background-color: #fff;
+  background-color: #fafafa;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
@@ -34,4 +42,55 @@ model-viewer {
 /* Hover Effect */
 model-viewer:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* Product Details */
+.product-details {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Price Styling */
+#product-price {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 8px rgba(35, 35, 35, 0.4);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  padding: 10px 20px;
+}
+
+/* Buttons */
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.action-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: rgb(48, 48, 48);
+  background-color: #ffffff;
+  box-shadow: 0 1px 8px rgba(35, 35, 35, 0.4);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-button:hover {
+  background-color: #eeeeee;
+  box-shadow: 0 1px 12px rgba(35, 35, 35, 0.4);
+  transition: box-shadow 0.5s ease;
+  transition: background-color 0.5s ease;
+}
+
+.heart {
+  color: #626161;
 }

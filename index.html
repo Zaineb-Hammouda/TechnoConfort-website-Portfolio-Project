@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>360 View Product Display</title>
+  <title>360° Product Viewer</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     body {
@@ -39,13 +39,16 @@
   <div class="container">
     <h1>360° View of Product</h1>
     <model-viewer
-      src="tn_domino.glb"
+      src="./tn_domino.glb"
       alt="3D view of the furniture"
       auto-rotate
+      auto-rotate-delay="1"
+      rotation-per-second="0.1"
+      camera-orbit="30deg 45deg 2m"
       camera-controls
       ar
       environment-image="neutral"
-      shadow-intensity="1"
+      shadow-intensity="5"
     ></model-viewer>
   </div>
 </body>

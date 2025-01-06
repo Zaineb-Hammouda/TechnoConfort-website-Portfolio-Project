@@ -3,7 +3,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #eeeeee;
 }
 
 /* Center the Content */
@@ -33,7 +33,7 @@ h1 {
 model-viewer {
   width: 80%;
   height: 500px;
-  background-color: #fafafa;
+  background-color: #f3f3f3;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
@@ -92,5 +92,5 @@ model-viewer:hover {
 }
 
 .heart {
-  color: #626161;
+  color: #842f2f;
 }

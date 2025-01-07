@@ -57,42 +57,6 @@ h1 {
   margin-bottom: 15px;
 }
 
-/* Model Viewer Styling
-model-viewer {
-  width: 80%;
-  height: 500px;
-  background-color: #f3f3f3;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease;
-}
-
- Hover Effect
-model-viewer:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
-/* Product Details
-.product-details {
-  margin-top: 10px;
-  text-align: center;
-}
-
-/* Price Styling 
-#product-price {
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 10px;
-  background-color: #ffffff;
-  box-shadow: 0 1px 8px rgba(35, 35, 35, 0.4);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  padding: 10px 20px;
-} */
-
 /* Buttons */
 .buttons {
   display: flex;

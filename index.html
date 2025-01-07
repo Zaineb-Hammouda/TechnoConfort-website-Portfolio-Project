@@ -3,40 +3,179 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hover to Rotate 3D Model</title>
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <title>3D Product Gallery</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>DOMINO Bedside table</h1>
-    <model-viewer
-      src="./content/desk_domino.glb"
-      alt="3D view of the furniture"
-      camera-orbit="30deg 85deg 5m"
-      camera-controls
-      environment-image="neutral"
-      auto-rotate-delay="0"
-      rotation-per-second="5"
-      shadow-intensity="1"
-      id="product-viewer"
-    ></model-viewer>
+    <h1>Furniture Gallery</h1>
 
-    <!-- Product Details -->
-    <div class="product-details">
-      <!-- Price -->
-      <p id="product-price">$299.99</p>
+    <!-- Product Cards Container -->
+    <div class="product-gallery">
+      <!-- Card 1 -->
+      <div class="product-card">
+        <h2 class="product-name">Nightstand DOMINO</h2>
+        <model-viewer
+          class="product-viewer"
+          src="./content/bedside_table_domino.glb"
+          alt="the domino nightstand"
+          camera-orbit="30deg 85deg 2m"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+        ></model-viewer>
+        <p class="product-price">$200.00</p>
+        <div class="buttons">
+          <button class="action-button">Add to Cart</button>
+          <button class="action-button">
+            <span class="heart">❤️</span> Add to Wishlist
+          </button>
+        </div>
+      </div>
 
-      <!-- Buttons -->
-      <div class="buttons">
-        <button id="add-to-cart" class="action-button">Add to Cart</button>
-        <button id="add-to-wishlist" class="action-button">
-          <span class="heart">❤️</span> Add to Wishlist
-        </button>
+      <!-- Card 2 -->
+      <div class="product-card">
+        <h2 class="product-name">Desk DOMINO</h2>
+        <model-viewer
+          class="product-viewer"
+          src="./content/desk_domino.glb"
+          alt="the domino desk"
+          camera-orbit="30deg 85deg 4m"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+        ></model-viewer>
+        <p class="product-price">$519.99</p>
+        <div class="buttons">
+          <button class="action-button">Add to Cart</button>
+          <button class="action-button">
+            <span class="heart">❤️</span> Add to Wishlist
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card">
+        <h2 class="product-name">Bed DOMINO</h2>
+        <model-viewer
+          class="product-viewer"
+          src="./content/bed_domino.glb"
+          alt="the domino bed"
+          camera-orbit="30deg 85deg 5m"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+        ></model-viewer>
+        <p class="product-price">$699.99</p>
+        <div class="buttons">
+          <button class="action-button">Add to Cart</button>
+          <button class="action-button">
+            <span class="heart">❤️</span> Add to Wishlist
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card">
+        <h2 class="product-name">Closet DOMINO</h2>
+        <model-viewer
+          class="product-viewer"
+          src="./content/closet_domino.glb"
+          alt="the domino closet"
+          camera-orbit="30deg 85deg 5m"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+        ></model-viewer>
+        <p class="product-price">$950.00</p>
+        <div class="buttons">
+          <button class="action-button">Add to Cart</button>
+          <button class="action-button">
+            <span class="heart">❤️</span> Add to Wishlist
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card">
+        <h2 class="product-name">Vanity DOMINO</h2>
+        <model-viewer
+          class="product-viewer"
+          src="./content/vanity_domino.glb"
+          alt="the domino vanity"
+          camera-orbit="30deg 85deg 4m"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+        ></model-viewer>
+        <p class="product-price">$549.99</p>
+        <div class="buttons">
+          <button class="action-button">Add to Cart</button>
+          <button class="action-button">
+            <span class="heart">❤️</span> Add to Wishlist
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="product-card">
+        <h2 class="product-name">Vanity JULIA</h2>
+        <model-viewer
+          class="product-viewer"
+          src="./content/vanity_julia2.glb"
+          alt="the julia vanity"
+          camera-orbit="30deg 85deg 4m"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+        ></model-viewer>
+        <p class="product-price">$860.00</p>
+        <div class="buttons">
+          <button class="action-button">Add to Cart</button>
+          <button class="action-button">
+            <span class="heart">❤️</span> Add to Wishlist
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="product-card">
+        <h2 class="product-name">JULIA wardrobe</h2>
+        <model-viewer
+          class="product-viewer"
+          src="./content/closet_julia.glb"
+          alt="the julia closet"
+          camera-orbit="30deg 85deg 5m"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+        ></model-viewer>
+        <p class="product-price">$1449.99</p>
+        <div class="buttons">
+          <button class="action-button">Add to Cart</button>
+          <button class="action-button">
+            <span class="heart">❤️</span> Add to Wishlist
+          </button>
+        </div>
       </div>
     </div>
   </div>
 
-  <script src="script.js" defer></script>
+  <script src="script.js"></script>
 </body>
 </html>

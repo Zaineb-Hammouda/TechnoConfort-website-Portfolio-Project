@@ -8,28 +8,56 @@ body {
 
 /* Center the Content */
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+  padding: 20px;
+  text-align: center;
 }
 
 /* Title Styling */
 h1 {
-  margin-bottom: 10px;
-  font-size: 24px;
+  margin-bottom: 20px;
+  font-size: 28px;
   color: #333;
-  padding: 10px 60px;
-  background-color: #ffffff;
-  box-shadow: 0 1px 8px rgba(35, 35, 35, 0.4);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-/* Model Viewer Styling */
+/* Product Gallery Layout */
+.product-gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows wrapping if too many products */
+}
+
+/* Product Card Styling */
+.product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  width: 300px;
+}
+
+.product-card h2 {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #333;
+}
+
+.product-card model-viewer {
+  width: 100%;
+  height: 300px;
+  margin-bottom: 15px;
+}
+
+/* Price Styling */
+.product-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Model Viewer Styling
 model-viewer {
   width: 80%;
   height: 500px;
@@ -39,18 +67,18 @@ model-viewer {
   transition: box-shadow 0.3s ease;
 }
 
-/* Hover Effect */
+ Hover Effect
 model-viewer:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Product Details */
+/* Product Details
 .product-details {
   margin-top: 10px;
   text-align: center;
 }
 
-/* Price Styling */
+/* Price Styling 
 #product-price {
   font-size: 20px;
   font-weight: bold;
@@ -63,7 +91,7 @@ model-viewer:hover {
   cursor: pointer;
   transition: background-color 0.3s ease;
   padding: 10px 20px;
-}
+} */
 
 /* Buttons */
 .buttons {
@@ -74,10 +102,9 @@ model-viewer:hover {
 
 .action-button {
   padding: 10px 20px;
-  font-size: 16px;
-  color: rgb(48, 48, 48);
-  background-color: #ffffff;
-  box-shadow: 0 1px 8px rgba(35, 35, 35, 0.4);
+  font-size: 14px;
+  color: rgb(32, 32, 32);
+  background-color: #c3c3c3;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -85,10 +112,7 @@ model-viewer:hover {
 }
 
 .action-button:hover {
-  background-color: #eeeeee;
-  box-shadow: 0 1px 12px rgba(35, 35, 35, 0.4);
-  transition: box-shadow 0.5s ease;
-  transition: background-color 0.5s ease;
+  background-color: #a3a3a3;
 }
 
 .heart {

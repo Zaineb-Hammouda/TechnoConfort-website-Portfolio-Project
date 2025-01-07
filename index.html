@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -22,12 +22,10 @@
       id="product-viewer"
     ></model-viewer>
 
-    <!-- Product Details -->
     <div class="product-details">
-      <!-- Price -->
+    
       <p id="product-price">$299.99</p>
 
-      <!-- Buttons -->
       <div class="buttons">
         <button id="add-to-cart" class="action-button">Add to Cart</button>
         <button id="add-to-wishlist" class="action-button">
@@ -38,5 +36,97 @@
   </div>
 
   <script src="script.js" defer></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Product Gallery</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Furniture Gallery</h1>
+
+    <!-- Product Cards Container -->
+    <div class="product-gallery">
+      <!-- Card 1 -->
+      <div class="product-card">
+        <h2 class="product-name">Bedside Table DOMINO</h2>
+        <model-viewer
+          class="product-viewer"
+          src="./content/bedside_table_domino.glb"
+          alt="A 3D model of the bedside table domino"
+          camera-orbit="30deg 85deg 2m"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+          id="model-example"
+        ></model-viewer>
+        <p class="product-price">$200.00</p>
+        <div class="buttons">
+          <button class="action-button">Add to Cart</button>
+          <button class="action-button">
+            <span class="heart">❤️</span> Add to Wishlist
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card">
+        <h2 class="product-name">Desk DOMINO</h2>
+        <model-viewer
+          class="product-viewer"
+          src="./content/desk_domino.glb"
+          alt="the domino desk"
+          camera-orbit="30deg 85deg 4m"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+        ></model-viewer>
+        <p class="product-price">$519.99</p>
+        <div class="buttons">
+          <button class="action-button">Add to Cart</button>
+          <button class="action-button">
+            <span class="heart">❤️</span> Add to Wishlist
+          </button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card">
+        <h2 class="product-name">Bed DOMINO</h2>
+        <model-viewer
+          class="product-viewer"
+          src="./content/bed_domino.glb"
+          alt="the domino bed"
+          camera-orbit="30deg 85deg 4m"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+        ></model-viewer>
+        <p class="product-price">$699.99</p>
+        <div class="buttons">
+          <button class="action-button">Add to Cart</button>
+          <button class="action-button">
+            <span class="heart">❤️</span> Add to Wishlist
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

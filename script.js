@@ -1,8 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const productViewers = document.querySelectorAll(".product-viewer");
-  const modelExample = document.getElementById("model-example");
-  const originalCameraOrbit = modelExample.getAttribute("camera-orbit");
   const cartButtons = document.querySelectorAll(".action-button");
+  // Create a map to store the original camera-orbit for each model
+  const originalCameraOrbits = new Map();
+
+  // Initialize original camera-orbit for each model
+  productViewers.forEach((modelViewer, index) => {
+    const cameraOrbit = modelViewer.getAttribute("camera-orbit");
+    console.log(`Model ${index + 1} original camera orbit: ${cameraOrbit}`); // Debugging
+    originalCameraOrbits.set(modelViewer, cameraOrbit); // Store the original orbit
+  });
 
   // Loop through each model and apply effects
   productViewers.forEach((modelViewer) => {
@@ -15,7 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     modelViewer.addEventListener("mouseleave", () => {
       console.log("Hover stopped");
       modelViewer.removeAttribute("auto-rotate"); // Stop rotating when hover ends
-      modelViewer.setAttribute("camera-orbit", originalCameraOrbit);
+
+      // Reset the camera orbit to its original value
+      const originalOrbit = originalCameraOrbits.get(modelViewer);
+      modelViewer.setAttribute("camera-orbit", originalOrbit);
     });
   });
 

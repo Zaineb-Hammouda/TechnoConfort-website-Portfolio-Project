@@ -3,15 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Product Gallery</title>
+  <title>Furniture Preview</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="container">
-    <h1>Furniture Gallery</h1>
-    <!-- Empty container for product cards -->
-    <div class="product-gallery"></div>
+    <h1>Adult Furniture</h1>
+    <div class="carousel-container">
+      <button class="arrow left-arrow" id="adult-scroll-left">⬅</button>
+      <div class="carousel" id="adult-carousel"></div>
+      <button class="arrow right-arrow" id="adult-scroll-right">➡</button>
+    </div>
+
+    <h1>Kids Furniture</h1>
+    <div class="carousel-container">
+      <button class="arrow left-arrow" id="kids-scroll-left">⬅</button>
+      <div class="carousel" id="kids-carousel"></div>
+      <button class="arrow right-arrow" id="kids-scroll-right">➡</button>
+    </div>
+
+    <h1>Full BedRooms</h1>
+    <div class="carousel-container">
+      <button class="arrow left-arrow" id="rooms-scroll-left">⬅</button>
+      <div class="carousel" id="rooms-carousel"></div>
+      <button class="arrow right-arrow" id="rooms-scroll-right">➡</button>
+    </div>
   </div>
 
   <script src="script.js"></script>

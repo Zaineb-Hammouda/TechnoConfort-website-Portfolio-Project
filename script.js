@@ -1,146 +1,169 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("DOM fully loaded and parsed!");
+  console.log("DOM fully loaded and parsed");
 
-  const productGallery = document.querySelector(".product-gallery");
-
-  // Product data
-  const products = [
-    {
-      name: "Nightstand DOMINO",
-      price: "$200.00",
-      modelUrl: "./content/nightstand_domino.glb",
-      cameraOrbit: "30deg 85deg 2m",
-    },
-    {
-      name: "Desk DOMINO",
-      price: "$519.99",
-      modelUrl: "./content/desk_domino.glb",
-      cameraOrbit: "30deg 85deg 4m",
-    },
-    {
-      name: "Bed DOMINO",
-      price: "$699.99",
-      modelUrl: "./content/bed_domino.glb",
-      cameraOrbit: "30deg 85deg 5m",
-    },
-    {
-      name: "Closet DOMINO",
-      price: "$950.00",
-      modelUrl: "./content/closet_domino.glb",
-      cameraOrbit: "30deg 85deg 5m",
-    },
-    {
-      name: "Vanity DOMINO",
-      price: "$549.99",
-      modelUrl: "./content/vanity_domino.glb",
-      cameraOrbit: "30deg 85deg 4m",
-    },
-    {
-      name: "Vanity JULIA",
-      price: "$860.00",
-      modelUrl: "./content/vanity_julia2.glb",
-      cameraOrbit: "30deg 85deg 4m",
-    },
-    {
-      name: "JULIA wardrobe",
-      price: "$1449.99",
-      modelUrl: "./content/closet_julia.glb",
-      cameraOrbit: "30deg 85deg 5m",
-    },
-    {
-      name: "JULIA nightstand",
-      price: "$349.99",
-      modelUrl: "./content/nightstand_julia.glb",
-      cameraOrbit: "30deg 85deg 2m",
-    },
-    {
-      name: "JULIA bed",
-      price: "$1030.00",
-      modelUrl: "./content/julia_bed.glb",
-      cameraOrbit: "30deg 85deg 6m",
-    },
-    {
-      name: "JULIA room",
-      price: "$4079.99",
-      modelUrl: "./content/room_julia.glb",
-      cameraOrbit: "30deg 85deg 12m",
-    },
-    {
-      name: "DOMINO room",
-      price: "$4079.99",
-      modelUrl: "./content/room_domino.glb",
-      cameraOrbit: "30deg 85deg 12m",
-    },
+  const adultFurniture = [
+    { name: "JULIA nightstand", modelUrl: "./content/nightstand_julia.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "JULIA VANITY", modelUrl: "./content/vanity_julia2.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "JULIA WARDROBE", modelUrl: "./content/closet_julia.glb", cameraOrbit: "30deg 85deg 5m" },
+    { name: "JULIA BED", modelUrl: "./content/julia_bed.glb", cameraOrbit: "30deg 85deg 4m" },
   ];
 
-  // Generate product cards dynamically
-  products.forEach((product) => {
-    const productCard = document.createElement("div");
-    productCard.classList.add("product-card");
+  const kidsFurniture = [
+    { name: "DOMINO nightstand", modelUrl: "./content/nightstand_domino.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "DOMINO VANITY", modelUrl: "./content/vanity_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO desk", modelUrl: "./content/desk_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO WARDROBE", modelUrl: "./content/closet_domino.glb", cameraOrbit: "30deg 85deg 5m" },
+    { name: "DOMINO BED", modelUrl: "./content/bed_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+  ];
 
-    productCard.innerHTML = `
-      <h2 class="product-name">${product.name}</h2>
-      <model-viewer
-        class="product-viewer"
-        src="${product.modelUrl}"
-        alt="${product.name}"
-        camera-orbit="${product.cameraOrbit}"
-        camera-controls
-        rotation-per-second="1"
-        auto-rotate-delay="0"
-        environment-image="neutral"
-        shadow-intensity="1"
-      ></model-viewer>
-      <p class="product-price">${product.price}</p>
-      <div class="buttons">
-        <button class="action-button">Add to Cart</button>
-        <button class="action-button">
-          <span class="heart">❤️</span> Add to Wishlist
-        </button>
-      </div>
-    `;
+  const fullRooms = [
+    { name: "DOMNIO Bedroom", modelUrl: "./content/room_domino.glb", cameraOrbit: "30deg 85deg 7m" },
+    { name: "JULIA Bedroom", modelUrl: "./content/room_julia.glb", cameraOrbit: "30deg 85deg 8m" },
+  ];
 
-    productGallery.appendChild(productCard);
-  });
+  const carousels = [
+    { id: "adult-carousel", data: adultFurniture },
+    { id: "kids-carousel", data: kidsFurniture },
+    { id: "rooms-carousel", data: fullRooms },
+  ];
 
-  // Apply effects to dynamically added elements
-  const productViewers = document.querySelectorAll(".product-viewer");
-  const cartButtons = document.querySelectorAll(".action-button");
-  const originalCameraOrbits = new Map();
+  const arrowMappings = [
+    { left: "adult-scroll-left", right: "adult-scroll-right" },
+    { left: "kids-scroll-left", right: "kids-scroll-right" },
+    { left: "rooms-scroll-left", right: "rooms-scroll-right" },
+  ];
 
-  // Initialize original camera-orbit for each model
-  productViewers.forEach((modelViewer, index) => {
-    const cameraOrbit = modelViewer.getAttribute("camera-orbit");
-    console.log(`Model ${index + 1} original camera orbit: ${cameraOrbit}`); // Debugging
-    originalCameraOrbits.set(modelViewer, cameraOrbit); // Store the original orbit
-  });
+  carousels.forEach((carousel, index) => {
+    const container = document.getElementById(carousel.id);
+    const data = carousel.data;
 
-  // Loop through each model and apply effects
-  productViewers.forEach((modelViewer) => {
-    modelViewer.addEventListener("mouseenter", () => {
-      console.log("Hover started");
-      modelViewer.setAttribute("auto-rotate", ""); // Start rotating on hover
-      console.log(modelViewer.hasAttribute("auto-rotate")); // Should log true when hovering
+    if (!container) {
+      console.error(`Carousel container with ID "${carousel.id}" not found.`);
+      return;
+    }
+
+    console.log(`Setting up carousel with ID: ${carousel.id}`);
+
+    const originalCameraOrbits = new Map();
+    let autoScroll;
+    let isManualScroll = false;
+
+    // Generate product cards
+    data.forEach((product, productIndex) => {
+      console.log(`Adding product to ${carousel.id}:`, product);
+
+      const productCard = document.createElement("div");
+      productCard.className = "product-card";
+      productCard.innerHTML = `
+        <model-viewer
+          class="product-viewer"
+          src="${product.modelUrl}"
+          alt="${product.name}"
+          camera-orbit="${product.cameraOrbit}"
+          camera-controls
+          rotation-per-second="1"
+          auto-rotate-delay="0"
+          environment-image="neutral"
+          shadow-intensity="1"
+        ></model-viewer>
+        <div class="product-name">${product.name}</div>
+      `;
+      container.appendChild(productCard);
+
+      // Initialize the original camera-orbit
+      const modelViewer = productCard.querySelector(".product-viewer");
+      const cameraOrbit = modelViewer.getAttribute("camera-orbit");
+      originalCameraOrbits.set(modelViewer, cameraOrbit);
+
+      // Hover Effects for Product Viewer
+      modelViewer.addEventListener("mouseenter", () => {
+        console.log(`Hover started on ${product.name}`);
+        modelViewer.setAttribute("auto-rotate", ""); // Start rotation
+      });
+
+      modelViewer.addEventListener("mouseleave", () => {
+        console.log(`Hover ended on ${product.name}`);
+        modelViewer.removeAttribute("auto-rotate"); // Stop rotation
+        modelViewer.setAttribute("camera-orbit", originalCameraOrbits.get(modelViewer)); // Reset orbit
+      });
     });
 
-    modelViewer.addEventListener("mouseleave", () => {
-      console.log("Hover stopped");
-      modelViewer.removeAttribute("auto-rotate"); // Stop rotating when hover ends
+    // Duplicate content for infinite scrolling
+    container.innerHTML += container.innerHTML;
+    console.log(`Content duplicated for infinite scrolling in ${carousel.id}`);
 
-      // Reset the camera orbit to its original value
-      const originalOrbit = originalCameraOrbits.get(modelViewer);
-      modelViewer.setAttribute("camera-orbit", originalOrbit);
-    });
-  });
+    // Initialize scroll position to avoid erratic behavior
+    container.scrollLeft = container.scrollWidth / 4;
+    console.log(`Scroll position initialized for ${carousel.id}`);
 
-  cartButtons.forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const buttonText = e.target.innerText;
-      if (buttonText.includes("Add to Cart")) {
-        alert("The product has been added to your cart!");
-      } else if (buttonText.includes("Add to Wishlist")) {
-        alert("The product has been added to your wishlist!");
+    // Debounce logic for scroll handling
+    let debounceTimeout;
+    const handleScroll = () => {
+      clearTimeout(debounceTimeout);
+      debounceTimeout = setTimeout(() => {
+        const scrollWidth = container.scrollWidth / 2;
+        if (container.scrollLeft >= scrollWidth) {
+          container.scrollLeft -= scrollWidth;
+          console.log(`${carousel.id}: Reset scroll position to start.`);
+        } else if (container.scrollLeft <= 0) {
+          container.scrollLeft += scrollWidth;
+          console.log(`${carousel.id}: Reset scroll position to end.`);
+        }
+        isManualScroll = false; // Allow auto-scroll to resume
+      }, 100); // Debounce delay
+    };
+
+    const startAutoScroll = () => {
+      if (isManualScroll) return; // Prevent auto-scroll during manual actions
+      console.log(`Starting auto-scroll for ${carousel.id}`);
+      autoScroll = setInterval(() => {
+        container.scrollBy({ left: 4, behavior: "smooth" });
+        handleScroll();
+      }, 20); // Smooth auto-scroll
+    };
+
+    const stopAutoScroll = () => {
+      console.log(`Stopping auto-scroll for ${carousel.id}`);
+      clearInterval(autoScroll);
+    };
+
+    // Start auto-scroll after a brief delay to ensure content is ready
+    setTimeout(startAutoScroll, 100);
+
+    // Pause auto-scroll on hover
+    container.addEventListener("mouseenter", stopAutoScroll);
+    container.addEventListener("mouseleave", startAutoScroll);
+
+    const leftArrow = document.getElementById(arrowMappings[index].left);
+    const rightArrow = document.getElementById(arrowMappings[index].right);
+
+    [leftArrow, rightArrow].forEach((arrow, arrowIndex) => {
+      if (!arrow) {
+        console.error(`Arrow button not found for ${carousel.id}:`, arrowIndex === 0 ? "Left" : "Right");
+        return;
       }
+
+      console.log(`Arrow button initialized for ${carousel.id}: ${arrowIndex === 0 ? "Left" : "Right"}`);
+      arrow.addEventListener("mouseenter", stopAutoScroll); // Pause on hover over arrows
+      arrow.addEventListener("mouseleave", startAutoScroll); // Resume on leaving arrows
     });
+
+    leftArrow.addEventListener("click", () => {
+      isManualScroll = true; // Mark manual scroll
+      stopAutoScroll(); // Pause auto-scroll
+      container.scrollBy({ left: -300, behavior: "smooth" });
+      console.log(`Left arrow clicked for ${carousel.id}`);
+      handleScroll();
+    });
+
+    rightArrow.addEventListener("click", () => {
+      isManualScroll = true; // Mark manual scroll
+      stopAutoScroll(); // Pause auto-scroll
+      container.scrollBy({ left: 300, behavior: "smooth" });
+      console.log(`Right arrow clicked for ${carousel.id}`);
+      handleScroll();
+    });
+
+    container.addEventListener("scroll", handleScroll);
   });
 });

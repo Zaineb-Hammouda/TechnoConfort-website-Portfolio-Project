@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed!");
   const productViewers = document.querySelectorAll(".product-viewer");
   const cartButtons = document.querySelectorAll(".action-button");
   // Create a map to store the original camera-orbit for each model

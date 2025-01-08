@@ -3,33 +3,109 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Furniture Preview</title>
+  <title>TechnoConfort Home</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Adult Furniture</h1>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="logo">TechnoConfort</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search for furniture...">
+    </div>
+    <div class="header-buttons">
+      <button class="icon-button">🛒 Cart</button>
+      <button class="icon-button">👤 My Account</button>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <a href="#home" class="nav-button">Home</a>
+    <div class="nav-dropdown">
+      <button class="nav-button">Adult Bedrooms</button>
+      <div class="dropdown-content">
+        <a href="#">Full Rooms</a>
+        <a href="#">Nightstands</a>
+        <a href="#">Vanities</a>
+        <a href="#">Closets</a>
+        <a href="#">Beds</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-button">Kids Bedrooms</button>
+      <div class="dropdown-content">
+        <a href="#">Full Rooms</a>
+        <a href="#">Nightstands</a>
+        <a href="#">Desks</a>
+        <a href="#">Vanities</a>
+        <a href="#">Closets</a>
+        <a href="#">Beds</a>
+      </div>
+    </div>
+    <div class="nav-dropdown">
+      <button class="nav-button">Recently Viewed</button>
+      <div class="dropdown-content" id="recently-viewed"></div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="hero-image.jpg" alt="Modern furniture" class="hero-image">
+    <h1>TechnoConfort</h1>
+    <p>Your online destination for sleek, modern furniture</p>
+  </section>
+
+  <!-- Carousels Section -->
+  <section class="carousels">
+    <h2>Adult Furniture</h2>
     <div class="carousel-container">
       <button class="arrow left-arrow" id="adult-scroll-left">⬅</button>
       <div class="carousel" id="adult-carousel"></div>
       <button class="arrow right-arrow" id="adult-scroll-right">➡</button>
     </div>
 
-    <h1>Kids Furniture</h1>
+    <h2>Kids Furniture</h2>
     <div class="carousel-container">
       <button class="arrow left-arrow" id="kids-scroll-left">⬅</button>
       <div class="carousel" id="kids-carousel"></div>
       <button class="arrow right-arrow" id="kids-scroll-right">➡</button>
     </div>
 
-    <h1>Full BedRooms</h1>
+    <h2>Full Bedrooms</h2>
     <div class="carousel-container">
       <button class="arrow left-arrow" id="rooms-scroll-left">⬅</button>
       <div class="carousel" id="rooms-carousel"></div>
       <button class="arrow right-arrow" id="rooms-scroll-right">➡</button>
     </div>
-  </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature">
+      <div class="icon">📦</div>
+      <p>Fast Delivery</p>
+    </div>
+    <div class="feature">
+      <div class="icon">💳</div>
+      <p>Secure Payment</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🔧</div>
+      <p>Easy Assembly</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📞</div>
+      <p>24/7 Support</p>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>Contact us: +1-800-123-4567</p>
+    <p><a href="https://facebook.com">Facebook</a> | <a href="https://instagram.com">Instagram</a> | Location</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

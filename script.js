@@ -1,8 +1,111 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed!");
+
+  const productGallery = document.querySelector(".product-gallery");
+
+  // Product data
+  const products = [
+    {
+      name: "Nightstand DOMINO",
+      price: "$200.00",
+      modelUrl: "./content/nightstand_domino.glb",
+      cameraOrbit: "30deg 85deg 2m",
+    },
+    {
+      name: "Desk DOMINO",
+      price: "$519.99",
+      modelUrl: "./content/desk_domino.glb",
+      cameraOrbit: "30deg 85deg 4m",
+    },
+    {
+      name: "Bed DOMINO",
+      price: "$699.99",
+      modelUrl: "./content/bed_domino.glb",
+      cameraOrbit: "30deg 85deg 5m",
+    },
+    {
+      name: "Closet DOMINO",
+      price: "$950.00",
+      modelUrl: "./content/closet_domino.glb",
+      cameraOrbit: "30deg 85deg 5m",
+    },
+    {
+      name: "Vanity DOMINO",
+      price: "$549.99",
+      modelUrl: "./content/vanity_domino.glb",
+      cameraOrbit: "30deg 85deg 4m",
+    },
+    {
+      name: "Vanity JULIA",
+      price: "$860.00",
+      modelUrl: "./content/vanity_julia2.glb",
+      cameraOrbit: "30deg 85deg 4m",
+    },
+    {
+      name: "JULIA wardrobe",
+      price: "$1449.99",
+      modelUrl: "./content/closet_julia.glb",
+      cameraOrbit: "30deg 85deg 5m",
+    },
+    {
+      name: "JULIA nightstand",
+      price: "$349.99",
+      modelUrl: "./content/nightstand_julia.glb",
+      cameraOrbit: "30deg 85deg 2m",
+    },
+    {
+      name: "JULIA bed",
+      price: "$1030.00",
+      modelUrl: "./content/julia_bed.glb",
+      cameraOrbit: "30deg 85deg 6m",
+    },
+    {
+      name: "JULIA room",
+      price: "$4079.99",
+      modelUrl: "./content/room_julia.glb",
+      cameraOrbit: "30deg 85deg 12m",
+    },
+    {
+      name: "DOMINO room",
+      price: "$4079.99",
+      modelUrl: "./content/room_domino.glb",
+      cameraOrbit: "30deg 85deg 12m",
+    },
+  ];
+
+  // Generate product cards dynamically
+  products.forEach((product) => {
+    const productCard = document.createElement("div");
+    productCard.classList.add("product-card");
+
+    productCard.innerHTML = `
+      <h2 class="product-name">${product.name}</h2>
+      <model-viewer
+        class="product-viewer"
+        src="${product.modelUrl}"
+        alt="${product.name}"
+        camera-orbit="${product.cameraOrbit}"
+        camera-controls
+        rotation-per-second="1"
+        auto-rotate-delay="0"
+        environment-image="neutral"
+        shadow-intensity="1"
+      ></model-viewer>
+      <p class="product-price">${product.price}</p>
+      <div class="buttons">
+        <button class="action-button">Add to Cart</button>
+        <button class="action-button">
+          <span class="heart">❤️</span> Add to Wishlist
+        </button>
+      </div>
+    `;
+
+    productGallery.appendChild(productCard);
+  });
+
+  // Apply effects to dynamically added elements
   const productViewers = document.querySelectorAll(".product-viewer");
   const cartButtons = document.querySelectorAll(".action-button");
-  // Create a map to store the original camera-orbit for each model
   const originalCameraOrbits = new Map();
 
   // Initialize original camera-orbit for each model

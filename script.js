@@ -1,24 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
   const adultFurniture = [
-    { name: "JULIA nightstand", modelUrl: "./content/nightstand_julia.glb", cameraOrbit: "30deg 85deg 5m" },
-    { name: "JULIA VANITY", modelUrl: "./content/vanity_julia2.glb", cameraOrbit: "30deg 85deg 6m" },
-    { name: "JULIA WARDROBE", modelUrl: "./content/closet_julia.glb", cameraOrbit: "30deg 85deg 6m" },
-    { name: "JULIA BED", modelUrl: "./content/julia_bed.glb", cameraOrbit: "30deg 85deg 6m" },
+    { name: "JULIA nightstand", modelUrl: "./content/nightstand_julia.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "JULIA VANITY", modelUrl: "./content/vanity_julia2.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "JULIA WARDROBE", modelUrl: "./content/closet_julia.glb", cameraOrbit: "30deg 85deg 5m" },
+    { name: "JULIA BED", modelUrl: "./content/julia_bed.glb", cameraOrbit: "30deg 85deg 4m" },
   ];
 
   const kidsFurniture = [
-    { name: "DOMINO nightstand", modelUrl: "./content/nightstand_domino.glb", cameraOrbit: "30deg 85deg 5m" },
-    { name: "DOMINO VANITY", modelUrl: "./content/vanity_domino.glb", cameraOrbit: "30deg 85deg 6m" },
-    { name: "DOMINO desk", modelUrl: "./content/desk_domino.glb", cameraOrbit: "30deg 85deg 6m" },
-    { name: "DOMINO WARDROBE", modelUrl: "./content/closet_domino.glb", cameraOrbit: "30deg 85deg 6m" },
-    { name: "DOMINO BED", modelUrl: "./content/bed_domino.glb", cameraOrbit: "30deg 85deg 6m" },
+    { name: "DOMINO nightstand", modelUrl: "./content/nightstand_domino.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "DOMINO VANITY", modelUrl: "./content/vanity_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO desk", modelUrl: "./content/desk_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO WARDROBE", modelUrl: "./content/closet_domino.glb", cameraOrbit: "30deg 85deg 5m" },
+    { name: "DOMINO BED", modelUrl: "./content/bed_domino.glb", cameraOrbit: "30deg 85deg 4m" },
   ];
 
   const fullRooms = [
-    { name: "DOMNIO Bedroom", modelUrl: "./content/room_domino.glb", cameraOrbit: "30deg 85deg 13m" },
-    { name: "JULIA Bedroom", modelUrl: "./content/room_julia.glb", cameraOrbit: "30deg 85deg 13m" },
+    { name: "DOMNIO Bedroom", modelUrl: "./content/room_domino.glb", cameraOrbit: "30deg 85deg 7m" },
+    { name: "JULIA Bedroom", modelUrl: "./content/room_julia.glb", cameraOrbit: "30deg 85deg 8m" },
   ];
-  
+
+  // Carousels array
   const carousels = [
     { id: "adult-carousel", data: adultFurniture },
     { id: "kids-carousel", data: kidsFurniture },
@@ -63,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const cameraOrbit = modelViewer.getAttribute("camera-orbit");
       originalCameraOrbits.set(modelViewer, cameraOrbit);
 
-      // Hover Effects
+      // Hover Effects for Product Viewer
       modelViewer.addEventListener("mouseenter", () => {
         modelViewer.setAttribute("auto-rotate", ""); // Start rotation
       });
@@ -73,6 +74,9 @@ document.addEventListener("DOMContentLoaded", () => {
         modelViewer.setAttribute("camera-orbit", originalCameraOrbits.get(modelViewer)); // Reset orbit
       });
     });
+
+    // Duplicate content for infinite scrolling
+    container.innerHTML += container.innerHTML;
 
     // Infinite Scrolling Logic
     const handleScroll = () => {
@@ -84,25 +88,47 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    const autoScroll = setInterval(() => {
-      container.scrollBy({ left: 1, behavior: "smooth" });
-      handleScroll();
-    }, 30);
+    let autoScroll;
+    const startAutoScroll = () => {
+      autoScroll = setInterval(() => {
+        container.scrollBy({ left: 1, behavior: "smooth" });
+        handleScroll();
+      }, 30);
+    };
 
-    container.addEventListener("mouseenter", () => clearInterval(autoScroll));
-    container.addEventListener("mouseleave", () => setInterval(() => {
-      container.scrollBy({ left: 1, behavior: "smooth" });
-      handleScroll();
-    }, 30));
+    const stopAutoScroll = () => {
+      clearInterval(autoScroll);
+    };
+
+    // Start auto-scroll
+    startAutoScroll();
+
+    // Pause auto-scroll on hover (products and arrows)
+    container.addEventListener("mouseenter", stopAutoScroll);
+    container.addEventListener("mouseleave", startAutoScroll);
+
+    const leftArrow = document.getElementById(arrowMappings[index].left);
+    const rightArrow = document.getElementById(arrowMappings[index].right);
+
+    [leftArrow, rightArrow].forEach((arrow) => {
+      arrow.addEventListener("mouseenter", stopAutoScroll); // Pause on hover over arrows
+      arrow.addEventListener("mouseleave", startAutoScroll); // Resume on leaving arrows
+    });
 
     // Arrow Navigation
-    document.getElementById(arrowMappings[index].left).addEventListener("click", () => {
+    leftArrow.addEventListener("click", () => {
+      stopAutoScroll(); // Pause auto-scroll
       container.scrollBy({ left: -300, behavior: "smooth" });
-    });
-    document.getElementById(arrowMappings[index].right).addEventListener("click", () => {
-      container.scrollBy({ left: 300, behavior: "smooth" });
+      //startAutoScroll(); // Resume auto-scroll
     });
 
+    rightArrow.addEventListener("click", () => {
+      stopAutoScroll(); // Pause auto-scroll
+      container.scrollBy({ left: 300, behavior: "smooth" });
+      //startAutoScroll(); // Resume auto-scroll
+    });
+
+    // Monitor scrolling to ensure seamless loop
     container.addEventListener("scroll", handleScroll);
   });
 });

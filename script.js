@@ -2,23 +2,23 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed");
 
   const adultFurniture = [
-    { name: "JULIA nightstand", modelUrl: "./content/nightstand_julia.glb", cameraOrbit: "30deg 85deg 2m" },
-    { name: "JULIA VANITY", modelUrl: "./content/vanity_julia2.glb", cameraOrbit: "30deg 85deg 4m" },
-    { name: "JULIA WARDROBE", modelUrl: "./content/closet_julia.glb", cameraOrbit: "30deg 85deg 5m" },
-    { name: "JULIA BED", modelUrl: "./content/julia_bed.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "JULIA Nightstand", modelUrl: "./content/nightstand_julia.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "JULIA Vanity", modelUrl: "./content/vanity_julia2.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "JULIA Wardrobe", modelUrl: "./content/closet_julia.glb", cameraOrbit: "30deg 85deg 5m" },
+    { name: "JULIA Bed", modelUrl: "./content/julia_bed.glb", cameraOrbit: "30deg 85deg 4m" },
   ];
 
   const kidsFurniture = [
-    { name: "DOMINO nightstand", modelUrl: "./content/nightstand_domino.glb", cameraOrbit: "30deg 85deg 2m" },
-    { name: "DOMINO VANITY", modelUrl: "./content/vanity_domino.glb", cameraOrbit: "30deg 85deg 4m" },
-    { name: "DOMINO desk", modelUrl: "./content/desk_domino.glb", cameraOrbit: "30deg 85deg 4m" },
-    { name: "DOMINO WARDROBE", modelUrl: "./content/closet_domino.glb", cameraOrbit: "30deg 85deg 5m" },
-    { name: "DOMINO BED", modelUrl: "./content/bed_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO Nightstand", modelUrl: "./content/nightstand_domino.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "DOMINO Vanity", modelUrl: "./content/vanity_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO Desk", modelUrl: "./content/desk_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO Wardrobe", modelUrl: "./content/closet_domino.glb", cameraOrbit: "30deg 85deg 5m" },
+    { name: "DOMINO Bed", modelUrl: "./content/bed_domino.glb", cameraOrbit: "30deg 85deg 4m" },
   ];
 
   const fullRooms = [
-    { name: "DOMNIO Bedroom", modelUrl: "./content/room_domino.glb", cameraOrbit: "30deg 85deg 7m" },
-    { name: "JULIA Bedroom", modelUrl: "./content/room_julia.glb", cameraOrbit: "30deg 85deg 8m" },
+    { name: "DOMNIO Bedroom", modelUrl: "./content/room_domino.glb", cameraOrbit: "30deg 85deg 8m" },
+    { name: "JULIA Bedroom", modelUrl: "./content/room_julia.glb", cameraOrbit: "30deg 85deg 9m" },
   ];
 
   const carousels = [
@@ -117,9 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isManualScroll) return; // Prevent auto-scroll during manual actions
       console.log(`Starting auto-scroll for ${carousel.id}`);
       autoScroll = setInterval(() => {
-        container.scrollBy({ left: 4, behavior: "smooth" });
+        container.scrollBy({ left: 1, behavior: "smooth" });
         handleScroll();
-      }, 20); // Smooth auto-scroll
+      }, 10); // Smooth auto-scroll
     };
 
     const stopAutoScroll = () => {

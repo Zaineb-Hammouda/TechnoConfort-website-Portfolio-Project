@@ -211,6 +211,12 @@ body {
   margin-bottom: 5px;
 }
 
+section.carousels h2 {
+  position: relative; /* Ensures the positioning works */
+  text-align: center;
+  color:#5b5b5b
+}
+
 .arrow {
   position: absolute;
   top: 0;

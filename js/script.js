@@ -2,23 +2,23 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM fully loaded and parsed");
 
   const adultFurniture = [
-    { name: "JULIA Nightstand", modelUrl: "./content/nightstand_julia.glb", cameraOrbit: "30deg 85deg 2m" },
-    { name: "JULIA Vanity", modelUrl: "./content/vanity_julia2.glb", cameraOrbit: "30deg 85deg 4m" },
-    { name: "JULIA Wardrobe", modelUrl: "./content/closet_julia.glb", cameraOrbit: "30deg 85deg 5m" },
-    { name: "JULIA Bed", modelUrl: "./content/julia_bed.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "JULIA Nightstand", modelUrl: "../content/products/nightstand_julia.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "JULIA Vanity", modelUrl: "../content/products/vanity_julia2.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "JULIA Wardrobe", modelUrl: "../content/products/closet_julia.glb", cameraOrbit: "30deg 85deg 5m" },
+    { name: "JULIA Bed", modelUrl: "../content/products/julia_bed.glb", cameraOrbit: "30deg 85deg 4m" },
   ];
 
   const kidsFurniture = [
-    { name: "DOMINO Nightstand", modelUrl: "./content/nightstand_domino.glb", cameraOrbit: "30deg 85deg 2m" },
-    { name: "DOMINO Vanity", modelUrl: "./content/vanity_domino.glb", cameraOrbit: "30deg 85deg 4m" },
-    { name: "DOMINO Desk", modelUrl: "./content/desk_domino.glb", cameraOrbit: "30deg 85deg 4m" },
-    { name: "DOMINO Wardrobe", modelUrl: "./content/closet_domino.glb", cameraOrbit: "30deg 85deg 5m" },
-    { name: "DOMINO Bed", modelUrl: "./content/bed_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO Nightstand", modelUrl: "../content/products/nightstand_domino.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "DOMINO Vanity", modelUrl: "../content/products/vanity_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO Desk", modelUrl: "../content/products/desk_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO Wardrobe", modelUrl: "../content/products/closet_domino.glb", cameraOrbit: "30deg 85deg 5m" },
+    { name: "DOMINO Bed", modelUrl: "../content/products/bed_domino.glb", cameraOrbit: "30deg 85deg 4m" },
   ];
 
   const fullRooms = [
-    { name: "DOMNIO Bedroom", modelUrl: "./content/room_domino.glb", cameraOrbit: "30deg 85deg 8m" },
-    { name: "JULIA Bedroom", modelUrl: "./content/room_julia.glb", cameraOrbit: "30deg 85deg 9m" },
+    { name: "DOMNIO Bedroom", modelUrl: "../content/products/room_domino.glb", cameraOrbit: "30deg 85deg 8m" },
+    { name: "JULIA Bedroom", modelUrl: "../content/products/room_julia.glb", cameraOrbit: "30deg 85deg 9m" },
   ];
 
   const carousels = [

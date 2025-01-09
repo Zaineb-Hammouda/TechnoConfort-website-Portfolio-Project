@@ -8,6 +8,10 @@ body {
 
 /* Header Styling */
 .header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,6 +85,10 @@ body {
 
 /* Navigation Bar Styling */
 .navbar {
+  position: sticky;
+  top: 80px;
+  width: 100%;
+  z-index: 999;
   display: flex;
   justify-content: center;
   background-color: #d48b1d;
@@ -149,6 +157,7 @@ body {
   height: auto;
   max-height: 700px;
   object-fit: fill;
+  margin-top: 80px;
 }
 
 .hero h1 {
@@ -235,11 +244,12 @@ body {
 
 /* Features Section */
 .features {
-  display: flex;
+  /*display: flex;*/
   justify-content: space-around;
-  margin: 40px 0;
+  margin: 10px 0;
   padding: 10px;
   width: 100%;
+  display: flex;
 }
 
 .feature {
@@ -249,17 +259,18 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 20%;
-  margin: 10px;
+  /*margin: 10px;*/
 }
 
 .icon img{
   height: 35px; /* Adjust to your desired size */
   width: relative; /* Adjust to your desired size */
-  margin-bottom: 10px;
+  margin-bottom: 25px;
   display: block; /* Ensure it behaves as a block element */
   object-fit: contain; /* Ensures it fits within the specified dimensions */
   max-width: 100%; /* Prevents the image from exceeding its container */
-  position: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .feature p {
@@ -276,7 +287,7 @@ body {
 }
 
 .footer a {
-  color: #007bff;
+  color: #d59234;
   text-decoration: none;
 }
 

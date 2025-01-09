@@ -117,9 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (isManualScroll) return; // Prevent auto-scroll during manual actions
       console.log(`Starting auto-scroll for ${carousel.id}`);
       autoScroll = setInterval(() => {
-        container.scrollBy({ left: 4, behavior: "smooth" });
+        container.scrollBy({ left: 1, behavior: "smooth" });
         handleScroll();
-      }, 20); // Smooth auto-scroll
+      }, 10); // Smooth auto-scroll
     };
 
     const stopAutoScroll = () => {

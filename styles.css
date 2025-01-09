@@ -19,7 +19,9 @@ body {
 .logo-icon {
   height: auto;
   max-height: 40px;
+  padding-right: 0px;
   width: relative;
+  padding-left: 150px;
 }
 
 /*.logo {
@@ -29,14 +31,28 @@ body {
 }*/
 
 .search-bar input {
+  display: flex;
   width: 150%;
   padding: 10px;
   border: 1px solid #b8b8b8;
   border-radius: 4px;
 }
 
-.header-buttons .icon-button {
-  margin-left: 10px;
+.header-buttons .account-button {
+  margin-left: 5px;
+  padding: 8px;
+  margin-right: 150px;
+  background-color: #999999;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-buttons .cart-button {
+  margin-left: 60px;
   padding: 8px;
   background-color: #999999;
   color: white;
@@ -168,7 +184,7 @@ body {
 .product-card {
   flex: 0 0 250px;
   text-align: center;
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -180,9 +196,10 @@ body {
 
 .product-name {
   font-size: 16px;
-  color: #555;
+  color: #202020;
   margin-top: 5px;
-  margin-left: 50px;
+  position: center;
+  margin-bottom: 5px;
 }
 
 .arrow {
@@ -190,9 +207,12 @@ body {
   top: 0;
   bottom: 0;
   width: 50px;
-  background-color: rgba(0, 0, 0, 0.2);
-  color: white;
+  background-color: rgba(62, 62, 62, 0.2);
+  color: rgb(244, 242, 242);
+  font-weight: bold;
+  font-size: 25px;
   border: none;
+  /*border-radius: 10px;*/
   cursor: pointer;
   z-index: 10;
   display: flex;
@@ -210,6 +230,7 @@ body {
 
 .arrow:hover {
   background-color: rgba(0, 0, 0, 0.4);
+  color:#e7821d
 }
 
 /* Features Section */
@@ -217,7 +238,8 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 40px 0;
-  padding: 20px;
+  padding: 10px;
+  width: 100%;
 }
 
 .feature {
@@ -227,16 +249,22 @@ body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 20%;
+  margin: 10px;
 }
 
-.icon {
-  font-size: 40px;
+.icon img{
+  height: 35px; /* Adjust to your desired size */
+  width: relative; /* Adjust to your desired size */
   margin-bottom: 10px;
+  display: block; /* Ensure it behaves as a block element */
+  object-fit: contain; /* Ensures it fits within the specified dimensions */
+  max-width: 100%; /* Prevents the image from exceeding its container */
+  position: center;
 }
 
 .feature p {
   font-size: 14px;
-  color: #555;
+  color: #373737;
 }
 
 /* Footer Section */

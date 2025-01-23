@@ -1,36 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Products Page Loaded");
-
-  const productGallery = document.getElementById("product-gallery");
+  console.log("Products page loaded.");
 
   const products = [
-    { name: "Modern Nightstand", price: "$200.00", imageUrl: "../content/images_icons/nightstand.jpg" },
-    { name: "Elegant Wardrobe", price: "$950.00", imageUrl: "../content/images_icons/wardrobe.jpg" },
-    { name: "Stylish Vanity", price: "$500.00", imageUrl: "../content/images_icons/vanity.jpg" },
-    { name: "Cozy Bed", price: "$800.00", imageUrl: "../content/images_icons/bed.jpg" },
-    { name: "Luxury Room Set", price: "$4000.00", imageUrl: "../content/images_icons/room.jpg" },
+    { name: "LARA Pink Desk", price: "$450.00", modelUrl: "./content/products/desk_lara_pink.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "LARA Blue Desk", price: "$450.00", modelUrl: "./content/products/desk_lara_blue.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "DOMINO Desk", price: "$529.99", modelUrl: "./content/products/desk_domino.glb", cameraOrbit: "30deg 85deg 4m" },
   ];
 
-  // Generate products dynamically
+  const productGallery = document.getElementById("product-gallery");
+  const productCount = document.getElementById("product-count");
+
+  productCount.textContent = `${products.length} Products Available`;
+
+  // Render product gallery
   products.forEach((product) => {
     const productCard = document.createElement("div");
     productCard.className = "product-card";
-
     productCard.innerHTML = `
-      <img src="${product.imageUrl}" alt="${product.name}">
-      <div class="product-name">${product.name}</div>
-      <div class="product-price">${product.price}</div>
-      <button class="add-to-cart-btn">Add to Cart</button>
+      <model-viewer
+        src="${product.modelUrl}"
+        alt="${product.name}"
+        camera-orbit="${product.cameraOrbit}"
+        camera-controls
+        shadow-intensity="1"
+        rotation-per-second="1"
+        auto-rotate-delay="0"
+        environment-image="neutral"
+      ></model-viewer>
+      <h3 class="product-name">${product.name}</h3>
+      <p class="product-price">${product.price}</p>
+      <button class="action-button">Add to Cart</button>
     `;
-
     productGallery.appendChild(productCard);
-  });
 
-  // Placeholder "Add to Cart" functionality
-  document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const productName = e.target.parentElement.querySelector(".product-name").textContent;
-      alert(`Added "${productName}" to cart!`);
+    const modelViewer = productCard.querySelector("model-viewer");
+    const originalOrbit = product.cameraOrbit;
+
+    // Add hover effect to start rotation
+    modelViewer.addEventListener("mouseenter", () => {
+      modelViewer.setAttribute("auto-rotate", ""); // Start auto-rotate
+      console.log(`Started rotating ${product.name}`);
+    });
+
+    // Reset rotation and orbit when hover ends
+    modelViewer.addEventListener("mouseleave", () => {
+      modelViewer.removeAttribute("auto-rotate"); // Stop auto-rotate
+      modelViewer.setAttribute("camera-orbit", originalOrbit); // Reset to original orbit
+      console.log(`Stopped rotating ${product.name}`);
+    });
+
+    // Add click event for "Add to Cart" button
+    const button = productCard.querySelector(".action-button");
+    button.addEventListener("click", () => {
+      alert(`${product.name} has been added to your cart!`);
     });
   });
 });

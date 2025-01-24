@@ -30,8 +30,31 @@
   <nav class="navbar">
     <div class="container">
       <a href="index.html" class="nav-button">Home</a>
-      <a href="products.html?category=adult-bedrooms" class="nav-button">Adult Bedrooms</a>
-      <a href="products.html?category=kid-bedrooms" class="nav-button">Kids Bedrooms</a>
+      <div class="nav-dropdown">
+        <button class="nav-button">Adult Bedrooms</button>
+        <div class="dropdown-content">
+          <a href="./products.html">Full Rooms</a>
+          <a href="./products.html">Nightstands</a>
+          <a href="./products.html">Vanities</a>
+          <a href="./products.html">Closets</a>
+          <a href="./products.html">Beds</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-button">Kids Bedrooms</button>
+        <div class="dropdown-content">
+          <a href="./products.html">Full Rooms</a>
+          <a href="./products.html">Nightstands</a>
+          <a href="./products.html">Desks</a>
+          <a href="./products.html">Vanities</a>
+          <a href="./products.html">Closets</a>
+          <a href="./products.html">Beds</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-button">Recently Viewed</button>
+        <div class="dropdown-content" id="recently-viewed"></div>
+      </div>
     </div>
   </nav>
 
@@ -51,7 +74,7 @@
 
     <div class="product-details">
       <h1 id="product-name">Product Name</h1>
-      <p id="product-price">$0.00</p>
+      <h2 id="product-price">$0.00</h2>
       <p id="product-description">Product description goes here...</p>
       <div class="product-reviews">
         <span class="stars">★★★★★</span>

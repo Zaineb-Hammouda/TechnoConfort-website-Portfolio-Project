@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Explore our elegant full room setups for adult bedrooms.",
       heroImage: "./content/images_icons/hero-adult rooms.jpg",
       products: [
-        { name: "JULIA Adult Room", price: "$4200", modelUrl: "./content/products/room_julia.glb", cameraOrbit: "30deg 85deg 9m" },
-        { name: "LORINE Adult Room", price: "$4800", modelUrl: "./content/products/room_lorine_adult.glb", cameraOrbit: "30deg 85deg 9m" },
+        { name: "JULIA Adult Room", price: "$4200", modelUrl: "./content/products/room_julia.glb", cameraOrbit: "30deg 85deg 9.5m" },
+        { name: "LORINE Adult Room", price: "$4800", modelUrl: "./content/products/room_lorine_adult.glb", cameraOrbit: "30deg 85deg 9.7m" },
       ],
     },
     "adult-bedrooms-nightstands": {
@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
       heroImage: "./content/images_icons/hero-adult rooms.jpg",
       products: [
         { name: "JULIA Vanity", price: "$750.00", modelUrl: "./content/products/vanity_julia2.glb", cameraOrbit: "30deg 85deg 4m" },
-        { name: "LORINE Vanity", price: "$699.99", modelUrl: "./content/products/vanity_lorine_adult.glb", cameraOrbit: "30deg 85deg 4m" },
+        { name: "LORINE Vanity", price: "$699.99", modelUrl: "./content/products/vanity_lorine_adult.glb", cameraOrbit: "30deg 85deg 3.5m" },
+        { name: "LORINE Chest", price: "$450.00", modelUrl: "./content/products/commode_lorine_adult.glb", cameraOrbit: "30deg 85deg 4m" },
       ],
     },
     "adult-bedrooms-closets": {
@@ -33,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
       heroImage: "./content/images_icons/hero-adult rooms.jpg",
       products: [
         { name: "JULIA Closet", price: "$2400", modelUrl: "./content/products/closet_julia.glb", cameraOrbit: "30deg 85deg 5m" },
-        { name: "LORINE Wardrobe", price: "$2850", modelUrl: "./content/products/closet_lorine_adult.glb", cameraOrbit: "30deg 85deg 5m" },
+        { name: "LORINE Wardrobe", price: "$2850", modelUrl: "./content/products/wardrobe_lorine_adult.glb", cameraOrbit: "30deg 85deg 6m" },
       ],
     },
     "adult-bedrooms-beds": {
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       heroImage: "./content/images_icons/hero-adult rooms.jpg",
       products: [
         { name: "JULIA Bed", price: "$1900", modelUrl: "./content/products/julia_bed.glb", cameraOrbit: "30deg 85deg 4m" },
-        { name: "LORINE Bed", price: "$2275", modelUrl: "./content/products/bed_lorine_adult.glb", cameraOrbit: "30deg 85deg 4m" },
+        { name: "LORINE Bed", price: "$2275", modelUrl: "./content/products/bed_lorine_adult.glb", cameraOrbit: "30deg 85deg 5m" },
       ],
     },
     "kids-bedrooms-full-rooms": {

@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Hover effect for model rotation
   modelViewer.addEventListener("mouseenter", () => {
     modelViewer.setAttribute("auto-rotate", "");
+    console.log("entered");
   });
   modelViewer.addEventListener("mouseleave", () => {
     modelViewer.removeAttribute("auto-rotate");

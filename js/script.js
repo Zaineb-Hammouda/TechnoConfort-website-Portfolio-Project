@@ -3,17 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const adultFurniture = [
     { name: "JULIA Nightstand", modelUrl: "../content/products/nightstand_julia.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "LORINE Chest", modelUrl: "./content/products/commode_lorine_adult.glb", cameraOrbit: "30deg 85deg 4m" },
     { name: "JULIA Vanity", modelUrl: "../content/products/vanity_julia2.glb", cameraOrbit: "30deg 85deg 4m" },
     { name: "LORINE Nightstand", modelUrl: "../content/products/nightstand_lorine_adult.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "LORINE Vanity", modelUrl: "./content/products/vanity_lorine_adult.glb", cameraOrbit: "30deg 85deg 3.5m" },
     { name: "JULIA Wardrobe", modelUrl: "../content/products/closet_julia.glb", cameraOrbit: "30deg 85deg 5m" },
+    { name: "LORINE Bed", modelUrl: "../content/products/bed_lorine_adult.glb", cameraOrbit: "30deg 85deg 5m" },
     { name: "JULIA Bed", modelUrl: "../content/products/julia_bed.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "LORINE Wardrobe", modelUrl: "./content/products/wardrobe_lorine_adult.glb", cameraOrbit: "30deg 85deg 6m" },
   ];
 
   const kidsFurniture = [
     { name: "LARA BLUE wardrobe", modelUrl: "../content/products/wardrobe_lara_blue.glb", cameraOrbit: "30deg 85deg 5m" },
     { name: "DOMINO Nightstand", modelUrl: "../content/products/nightstand_domino.glb", cameraOrbit: "30deg 85deg 2m" },
+    { name: "LARA Pink Nightstand", modelUrl: "./content/products/nightstand_lara_pink.glb", cameraOrbit: "30deg 85deg 2m" },
     { name: "LARA BLUE desk", modelUrl: "../content/products/desk_lara_blue.glb", cameraOrbit: "30deg 85deg 4m" },
     { name: "DOMINO Vanity", modelUrl: "../content/products/vanity_domino.glb", cameraOrbit: "30deg 85deg 4m" },
+    { name: "LARA Blue Nightstand", modelUrl: "./content/products/nightstand_lara_blue.glb", cameraOrbit: "30deg 85deg 2m" },
     { name: "LARA PINK Bed", modelUrl: "../content/products/bed_lara_pink.glb", cameraOrbit: "30deg 85deg 4m" },
     { name: "DOMINO Desk", modelUrl: "../content/products/desk_domino.glb", cameraOrbit: "30deg 85deg 4m" },
     { name: "LARA PINK Desk", modelUrl: "../content/products/desk_lara_pink.glb", cameraOrbit: "30deg 85deg 4m" },

@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description: "Explore our elegant Nightstands for adult bedrooms.",
       heroImage: "../content/images_icons/hero-adult rooms.jpg",
       products: [
-        { name: "JULIA Nightstand", price: "$320.00", modelUrl: "../content/products/nightstand_julia.glb", cameraOrbit: "30deg 85deg 2m", description: "The Julia nightstand is a perfect blend of elegance and practicality, designed to complement the Julia bedroom set. Made from beige and travertine MDF, it features clean, modern lines and a sturdy build. The standout detail is its champagne-colored handle and the touch of stained glass, adding a luxurious feel to its minimalist design. With a spacious drawer for storage, the Julia nightstand is as functional as it is stylish, making it a must-have addition to your bedroom.", qrCode: "../content/qrcodes/qr-julia-nighstand.png" },
+        { name: "JULIA Nightstand", price: "$320.00", modelUrl: "../content/products/nightstand_julia.glb", cameraOrbit: "30deg 85deg 2m", description: "The Julia nightstand is a perfect blend of elegance and practicality, designed to complement the Julia bedroom set. Made from beige and travertine MDF, it features clean, modern lines and a sturdy build. The standout detail is its champagne-colored handle and the touch of stained glass, adding a luxurious feel to its minimalist design. With a spacious drawer for storage, the Julia nightstand is as functional as it is stylish, making it a must-have addition to your bedroom.", qrCode: "../content/qrcodes/qr-julia-nightstand.png" },
         { name: "LORINE Nightstand", price: "$240.00", modelUrl: "../content/products/nightstand_lorine_adult.glb", cameraOrbit: "30deg 85deg 2m", description: "The Lorine nightstand combines timeless charm with modern functionality, designed to seamlessly complement the Lorine adult room. Crafted with a stunning blend of greige tones and natural wood, it exudes understated elegance. Its spacious drawers provide practical storage, while its sleek design and refined details elevate the aesthetic of your bedroom. Whether paired with the full Lorine collection or used as a standalone piece, the Lorine nightstand is a perfect addition for a sophisticated and organized space." },
       ],
     },
@@ -185,4 +185,31 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     recentlyViewedContainer.innerHTML = "<p>No products viewed recently.</p>";
   }
+
+  //add to cart functionnality
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("action-button")) {
+      const productName = e.target.closest(".product-card").querySelector(".product-name").textContent;
+      const productPrice = e.target.closest(".product-card").querySelector(".product-price").textContent;
+  
+      // Fetch cart from localStorage
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+      // Check if the product already exists in the cart
+      const existingProduct = cart.find((item) => item.name === productName);
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
+        cart.push({ name: productName, price: productPrice, quantity: 1 });
+      }
+  
+      // Save cart back to localStorage
+      localStorage.setItem("cart", JSON.stringify(cart));
+  
+      // Update cart count
+      const cartCountElement = document.getElementById("cart-count");
+      const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartCountElement.textContent = totalQuantity;
+    }
+  });  
 });

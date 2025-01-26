@@ -81,6 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
           auto-rotate-delay="0"
           environment-image="neutral"
           shadow-intensity="1"
+          disable-zoom
         ></model-viewer>
         <div class="product-name">${product.name}</div>
       `;
@@ -92,14 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
       originalCameraOrbits.set(modelViewer, cameraOrbit);
 
       // Hover Effects for Product Viewer
-      modelViewer.addEventListener("mouseenter", () => {
-        console.log(`Hover started on ${product.name}`);
-        modelViewer.setAttribute("auto-rotate", ""); // Start rotation
-      });
+      //modelViewer.addEventListener("mouseenter", () => {
+        //console.log(`Hover started on ${product.name}`);
+        //modelViewer.setAttribute("auto-rotate", ""); // Start rotation
+      //});
 
       modelViewer.addEventListener("mouseleave", () => {
         console.log(`Hover ended on ${product.name}`);
-        modelViewer.removeAttribute("auto-rotate"); // Stop rotation
+        //modelViewer.removeAttribute("auto-rotate"); // Stop rotation
         modelViewer.setAttribute("camera-orbit", originalCameraOrbits.get(modelViewer)); // Reset orbit
       });
     });

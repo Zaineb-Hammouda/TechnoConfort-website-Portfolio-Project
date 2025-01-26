@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       products: [
         { name: "LARA Pink Room", price: "$2200", modelUrl: "../content/products/room_lara_pink.glb", cameraOrbit: "30deg 85deg 8m", description: "The Lara Pink room is a dreamy sanctuary designed for your little one, combining soft white and delicate pink hues to create a playful yet soothing environment. Crafted with attention to detail, the room features light, airy furniture pieces that complement the gentle color palette." },
         { name: "LARA Blue Room", price: "$2200", modelUrl: "../content/products/room_lara_blue.glb", cameraOrbit: "30deg 85deg 8m", description: "The Lara Blue room is a tranquil and stylish retreat designed for your little one, featuring a soothing combination of soft white and calming blue tones. The room's serene color palette creates an atmosphere of peace and comfort, perfect for both play and rest." },
-        { name: "DOMINO Room", price: "$2850", modelUrl: "../content/products/room_domino.glb", cameraOrbit: "30deg 85deg 8m", description: "The Domino room is a playful yet elegant space designed for young children, combining soft green, beige, and natural wood tones to create a warm and inviting atmosphere. The room's color palette is balanced and soothing, perfect for fostering creativity and relaxation." },
+        { name: "DOMINO Room", price: "$2850", modelUrl: "../content/products/room_domino.glb", cameraOrbit: "30deg 85deg 8m", description: "The Domino room is a playful yet elegant space designed for young children, combining soft green, beige, and natural wood tones to create a warm and inviting atmosphere. The room's color palette is balanced and soothing, perfect for fostering creativity and relaxation.", qrCode: "../content/qrcodes/qr-domino-room.png" },
       ],
     },
     "kids-bedrooms-nightstands": {
@@ -132,13 +132,15 @@ document.addEventListener("DOMContentLoaded", () => {
           camera-controls
           shadow-intensity="1"
         ></model-viewer>
-        <h3 class="product-name">${product.name}</h3>
+        <h3 class="product-name" style="cursor: pointer;">${product.name}</h3>
         <p class="product-price">${product.price}</p>
         <button class="action-button">Add to Cart</button>
       `;
 
-      // Add click event to open product page
-      productCard.addEventListener("click", () => {
+      // Add click event to the product name only
+      const productNameLink = productCard.querySelector(".product-name");
+      productNameLink.addEventListener("click", (event) => {
+        event.preventDefault(); // Prevent the default anchor navigation
         localStorage.setItem("selectedProduct", JSON.stringify(product));
         window.location.href = `product.html`;
       });

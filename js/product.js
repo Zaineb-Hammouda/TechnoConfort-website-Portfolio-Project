@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Simulate product data
   const productData = {
-    name: "LARA Pink Desk",
+    name: "LARA Blue Desk",
     price: "$450.00",
-    description: "This delightful pink and white kids' desk is the perfect blend of style and functionality for any child's room. It features a spacious work surface, ideal for homework, crafts, or playtime, along with a convenient drawer for storing stationery and small essentials. A compact cabinet with a door keeps books and larger items neatly organized, while an open niche provides easy access to frequently used belongings. The desk also includes a hanging element with two doors, offering additional overhead storage to keep the space tidy. Designed with both practicality and charm, this desk adds a cheerful touch to any decor.",
-    modelUrl: "./content/products/desk_lara_pink.glb",
+    description: "This delightful blue and white kids' desk is the perfect blend of style and functionality for any child's room. It features a spacious work surface, ideal for homework, crafts, or playtime, along with a convenient drawer for storing stationery and small essentials. A compact cabinet with a door keeps books and larger items neatly organized, while an open niche provides easy access to frequently used belongings. The desk also includes a hanging element with two doors, offering additional overhead storage to keep the space tidy. Designed with both practicality and charm, this desk adds a cheerful touch to any decor.",
+    modelUrl: "./content/products/desk_lara_blue.glb",
     cameraOrbit: "30deg 85deg 4m",
-    qrCode: "./content/qrcodes/qr code.png",
+    qrCode: "./content/qrcodes/qr-lara-blue-desk.png",
     reviews: { stars: 0, count: 0 },
-  };
+  }
 
   // Populate product details
   document.getElementById("product-name").textContent = productData.name;

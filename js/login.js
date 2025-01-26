@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (storedUser) {
       alert(`Welcome, ${username}! Redirecting to homepage...`);
-      window.location.href = "index.html";
+      window.location.href = "../index.html";
     } else {
       alert("Invalid username or password. Please try again.");
     }

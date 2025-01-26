@@ -1,20 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Login page loaded");
-
   const loginForm = document.getElementById("login-form");
 
-  // Handle form submission
   loginForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    const username = document.getElementById("username").value;
+    const username = document.getElementById("username").value.trim();
     const password = document.getElementById("password").value;
-    const rememberMe = document.getElementById("remember-me").checked;
 
-    if (username && password) {
-      alert(`Logged in as ${username}\nRemember Me: ${rememberMe}`);
+    // Retrieve user data from localStorage
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const storedUser = users.find(
+      (user) => user.username === username && user.password === sha256(password)
+    );
+
+    if (storedUser) {
+      alert(`Welcome, ${username}! Redirecting to homepage...`);
+      window.location.href = "index.html";
     } else {
-      alert("Please fill in all fields.");
+      alert("Invalid username or password. Please try again.");
     }
   });
 });

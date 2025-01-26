@@ -259,7 +259,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target.classList.contains("action-button")) {
       const productName = e.target.closest(".product-card").querySelector(".product-name").textContent;
       const productPrice = e.target.closest(".product-card").querySelector(".product-price").textContent;
-  
+      const modelUrl = e.target.closest(".product-card").querySelector("model-viewer").getAttribute("src");
+
       // Fetch cart from localStorage
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
   
@@ -268,7 +269,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (existingProduct) {
         existingProduct.quantity += 1;
       } else {
-        cart.push({ name: productName, price: productPrice, quantity: 1 });
+        cart.push({ name: productName, price: productPrice, modelUrl, quantity: 1 });
       }
   
       // Save cart back to localStorage

@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: product.name,
             price: product.price,
             quantity: 1,
+            modelUrl: product.modelUrl, // Include modelUrl in the cart item
           });
         }
 
@@ -222,76 +223,4 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     recentlyViewedContainer.innerHTML = "<p>No products viewed recently.</p>";
   }
-
-  //add to cart functionnality
-  /*document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("action-button")) {
-      const productName = e.target.closest(".product-card").querySelector(".product-name").textContent;
-      const productPrice = e.target.closest(".product-card").querySelector(".product-price").textContent;
-  
-      // Fetch cart from localStorage
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  
-      // Check if the product already exists in the cart
-      const existingProduct = cart.find((item) => item.name === productName);
-      if (existingProduct) {
-        existingProduct.quantity += 1;
-      } else {
-        cart.push({ name: productName, price: productPrice, quantity: 1 });
-      }
-  
-      // Save cart back to localStorage
-      localStorage.setItem("cart", JSON.stringify(cart));
-  
-      // Update cart count in the header
-      updateCartCount();
-
-      alert(`${quantity} ${productData.name}(s) added to your cart!`);
-    }
-  });
-  // Update cart count in the header
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-    document.getElementById("cart-count").textContent = totalQuantity;
-  }
-
-  // Initialize cart count on page load
-  updateCartCount(); */
-  
-  //add to cart functionnality
-  /*document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("action-button")) {
-      const productName = e.target.closest(".product-card").querySelector(".product-name").textContent;
-      const productPrice = e.target.closest(".product-card").querySelector(".product-price").textContent;
-  
-      // Fetch cart from localStorage
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  
-      // Check if the product already exists in the cart
-      const existingProduct = cart.find((item) => item.name === productName);
-      if (existingProduct) {
-        existingProduct.quantity += 1;
-      } else {
-        cart.push({ name: productName, price: productPrice, quantity: 1 });
-      }
-  
-      // Save cart back to localStorage
-      localStorage.setItem("cart", JSON.stringify(cart));
-  
-      // Update cart count in the header
-      updateCartCount();
-
-      alert(`${quantity} ${productData.name}(s) added to your cart!`);
-    }
-  });
-  // Update cart count in the header
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-    document.getElementById("cart-count").textContent = totalQuantity;
-  }
-
-  // Initialize cart count on page load
-  updateCartCount();*/
 });

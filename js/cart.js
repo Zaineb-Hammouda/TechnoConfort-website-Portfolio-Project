@@ -23,8 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
       cartItem.className = "cart-item";
       cartItem.innerHTML = `
         <div>
+          <model-viewer
+            src="${item.modelUrl}"
+            alt="${item.name}" 
+            camera-controls
+            disable-zoom
+            shadow-intensity="1"
+            style="width: 100px; height: 100px;">
+          </model-viewer>
+          <p>Price: ${item.price}</p>
           <h3>${item.name}</h3>
-          <p>${item.price}</p>
           <p>Quantity: <input type="number" value="${item.quantity}" data-index="${index}" class="quantity-input"></p>
         </div>
         <button class="remove-item" data-index="${index}">Remove</button>

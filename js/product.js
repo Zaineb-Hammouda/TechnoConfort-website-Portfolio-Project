@@ -97,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: productData.name,
             price: productData.price,
             quantity,
+            modelUrl: productData.modelUrl, // Include modelUrl in the cart item
         });
     }
 

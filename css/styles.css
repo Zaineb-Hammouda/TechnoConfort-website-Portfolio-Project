@@ -555,6 +555,18 @@ section.carousels h2 {
   background-color: #fff;
 }
 
+.cart-item-details {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-item-details model-viewer {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
 .cart-summary {
   /*margin-top: 20px;*/
   font-size: 18px;

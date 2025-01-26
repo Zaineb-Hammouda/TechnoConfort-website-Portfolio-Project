@@ -571,3 +571,21 @@ section.carousels h2 {
   border-radius: 5px;
   box-shadow: #202020;
 }
+
+.cart-item-details h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.remove-item {
+  background-color: #f17509;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.remove-item:hover {
+  background-color: #d3230f;
+}

@@ -152,11 +152,48 @@ document.addEventListener("DOMContentLoaded", () => {
         modelViewer.removeAttribute("auto-rotate");
         modelViewer.setAttribute("camera-orbit", product.cameraOrbit);
       });
+      
+      // Add to Cart functionality
+      productCard.querySelector(".action-button").addEventListener("click", () => {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const existingProduct = cart.find((item) => item.name === product.name);
+
+        if (existingProduct) {
+          existingProduct.quantity += 1;
+        } else {
+          cart.push({
+            name: product.name,
+            price: product.price,
+            quantity: 1,
+          });
+        }
+
+        // Save cart back to localStorage
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        // Update cart count
+        updateCartCount();
+        alert(`${product.name} added to your cart!`);
+      });
 
       productGallery.appendChild(productCard);
     });
   } else {
     console.error("Invalid category. Please check the URL.");
+  }
+
+  // Update the cart count on page load
+  updateCartCount();
+
+  // Function to update the cart count
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+    const cartCountElement = document.getElementById("cart-count");
+    if (cartCountElement) {
+      cartCountElement.textContent = totalQuantity;
+    }
   }
 
   // Populate "Recently Viewed"
@@ -187,7 +224,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //add to cart functionnality
-  document.addEventListener("click", (e) => {
+  /*document.addEventListener("click", (e) => {
     if (e.target.classList.contains("action-button")) {
       const productName = e.target.closest(".product-card").querySelector(".product-name").textContent;
       const productPrice = e.target.closest(".product-card").querySelector(".product-price").textContent;
@@ -206,10 +243,55 @@ document.addEventListener("DOMContentLoaded", () => {
       // Save cart back to localStorage
       localStorage.setItem("cart", JSON.stringify(cart));
   
-      // Update cart count
-      const cartCountElement = document.getElementById("cart-count");
-      const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-      cartCountElement.textContent = totalQuantity;
+      // Update cart count in the header
+      updateCartCount();
+
+      alert(`${quantity} ${productData.name}(s) added to your cart!`);
     }
-  });  
+  });
+  // Update cart count in the header
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById("cart-count").textContent = totalQuantity;
+  }
+
+  // Initialize cart count on page load
+  updateCartCount(); */
+  
+  //add to cart functionnality
+  /*document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("action-button")) {
+      const productName = e.target.closest(".product-card").querySelector(".product-name").textContent;
+      const productPrice = e.target.closest(".product-card").querySelector(".product-price").textContent;
+  
+      // Fetch cart from localStorage
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+      // Check if the product already exists in the cart
+      const existingProduct = cart.find((item) => item.name === productName);
+      if (existingProduct) {
+        existingProduct.quantity += 1;
+      } else {
+        cart.push({ name: productName, price: productPrice, quantity: 1 });
+      }
+  
+      // Save cart back to localStorage
+      localStorage.setItem("cart", JSON.stringify(cart));
+  
+      // Update cart count in the header
+      updateCartCount();
+
+      alert(`${quantity} ${productData.name}(s) added to your cart!`);
+    }
+  });
+  // Update cart count in the header
+  function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    document.getElementById("cart-count").textContent = totalQuantity;
+  }
+
+  // Initialize cart count on page load
+  updateCartCount();*/
 });

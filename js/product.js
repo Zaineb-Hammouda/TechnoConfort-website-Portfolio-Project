@@ -1,43 +1,43 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Simulate product data
-  const productData = {
-    name: "LARA Blue Desk",
-    price: "$450.00",
-    description: "This delightful blue and white kids' desk is the perfect blend of style and functionality for any child's room. It features a spacious work surface, ideal for homework, crafts, or playtime, along with a convenient drawer for storing stationery and small essentials. A compact cabinet with a door keeps books and larger items neatly organized, while an open niche provides easy access to frequently used belongings. The desk also includes a hanging element with two doors, offering additional overhead storage to keep the space tidy. Designed with both practicality and charm, this desk adds a cheerful touch to any decor.",
-    modelUrl: "./content/products/desk_lara_blue.glb",
-    cameraOrbit: "30deg 85deg 4m",
-    qrCode: "./content/qrcodes/qr-lara-blue-desk.png",
-    reviews: { stars: 0, count: 0 },
+  const productData = JSON.parse(localStorage.getItem("selectedProduct"));
+
+  if (!productData) {
+    document.body.innerHTML = "<h1>Product not found</h1>";
+    return;
   }
 
   // Populate product details
   document.getElementById("product-name").textContent = productData.name;
   document.getElementById("product-price").textContent = productData.price;
   document.getElementById("product-description").textContent = productData.description;
-  document.getElementById("review-count").textContent = `(${productData.reviews.count} Reviews)`;
 
-  // Configure model viewer
   const modelViewer = document.getElementById("product-viewer");
-  modelViewer.src = productData.modelUrl;
+  modelViewer.setAttribute("src", productData.modelUrl);
   modelViewer.setAttribute("camera-orbit", productData.cameraOrbit);
+  //modelViewer.setAttribute("rotation-per-second", "1"); // Controls the speed of constant rotation
+  //modelViewer.setAttribute("auto-rotate", ""); // Enables auto-rotation
+  //modelViewer.setAttribute("auto-rotate-delay", "0");
 
-  // Hover effect for model rotation
-  modelViewer.addEventListener("mouseenter", () => {
-    modelViewer.setAttribute("auto-rotate", "");
-    console.log("entered");
-  });
+  // Hover effect for rotation
+  //modelViewer.addEventListener("mouseenter", () => {
+    //modelViewer.setAttribute("auto-rotate", ""); // Keep auto-rotation on hover
+    //console.log("Hover started: auto-rotation active.");
+    //console.log(modelViewer.hasAttribute("auto-rotate")); // Should log true when hovering
+  //});
+
   modelViewer.addEventListener("mouseleave", () => {
-    modelViewer.removeAttribute("auto-rotate");
-    modelViewer.setAttribute("camera-orbit", productData.cameraOrbit);
+    //modelViewer.removeAttribute("auto-rotate"); // Stop rotation on mouse leave
+    modelViewer.setAttribute("camera-orbit", productData.cameraOrbit); // Reset camera orbit
+    console.log("Hover ended: reset to original orbit.");
   });
 
-  // AR Button functionality
+  // QR Code functionality
   const qrPopup = document.getElementById("qr-popup");
   const qrCode = document.getElementById("qr-code");
   const closePopup = document.getElementById("close-popup");
 
   document.getElementById("ar-button").addEventListener("click", () => {
-    qrCode.src = productData.qrCode;
+    qrCode.src = productData.qrCode || "../content/qrcodes/default-qr.png";
     qrPopup.classList.remove("hidden");
   });
 

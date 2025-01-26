@@ -14,17 +14,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const modelViewer = document.getElementById("product-viewer");
   modelViewer.setAttribute("src", productData.modelUrl);
   modelViewer.setAttribute("camera-orbit", productData.cameraOrbit);
-  modelViewer.setAttribute("rotation-per-second", "5deg"); // Controls the speed of constant rotation
-  modelViewer.setAttribute("auto-rotate", ""); // Enables auto-rotation
+  //modelViewer.setAttribute("rotation-per-second", "1"); // Controls the speed of constant rotation
+  //modelViewer.setAttribute("auto-rotate", ""); // Enables auto-rotation
+  //modelViewer.setAttribute("auto-rotate-delay", "0");
 
   // Hover effect for rotation
-  modelViewer.addEventListener("mouseenter", () => {
-    modelViewer.setAttribute("auto-rotate", ""); // Keep auto-rotation on hover
-    console.log("Hover started: auto-rotation active.");
-  });
+  //modelViewer.addEventListener("mouseenter", () => {
+    //modelViewer.setAttribute("auto-rotate", ""); // Keep auto-rotation on hover
+    //console.log("Hover started: auto-rotation active.");
+    //console.log(modelViewer.hasAttribute("auto-rotate")); // Should log true when hovering
+  //});
 
   modelViewer.addEventListener("mouseleave", () => {
-    modelViewer.removeAttribute("auto-rotate"); // Stop rotation on mouse leave
+    //modelViewer.removeAttribute("auto-rotate"); // Stop rotation on mouse leave
     modelViewer.setAttribute("camera-orbit", productData.cameraOrbit); // Reset camera orbit
     console.log("Hover ended: reset to original orbit.");
   });

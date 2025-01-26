@@ -35,12 +35,6 @@ body {
   max-height: 40px;
 }
 
-/*.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}*/
-
 .search-bar input {
   width: 100%;
   padding: 10px;
@@ -74,7 +68,7 @@ body {
 /* Navigation Bar Styling */
 .navbar {
   position: sticky;
-  top: 55px;
+  top: 65px;
   z-index: 999;
   background-color: #d48b1d;
   padding: 10px 0;
@@ -143,7 +137,7 @@ body {
   width: 100%;
   max-height: 700px;
   object-fit: cover;
-  margin-top: 70px;
+  margin-top: 75px;
 }
 
 .hero h1 {
@@ -518,4 +512,27 @@ section.carousels h2 {
 
 .close-popup:hover {
   background-color: #b3721a;
+}
+
+.nav-dropdown .dropdown-content .recent-product {
+  margin: 10px 0;
+}
+
+.nav-dropdown .dropdown-content .recent-product a {
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  color: #5e5e5e;
+  padding: 8px 20px;
+}
+
+.dropdown-content p {
+  font-size: 16px;
+  display: block;
+  color: #5e5e5e;
+  padding: 8px 10px;
+}
+
+.nav-dropdown .dropdown-content .recent-product a:hover {
+  text-decoration: underline;
 }

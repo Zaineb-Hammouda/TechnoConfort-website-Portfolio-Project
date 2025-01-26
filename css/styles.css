@@ -4,6 +4,9 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ededed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Container for Consistent Alignment*/
@@ -44,8 +47,8 @@ body {
 
 .header-buttons button {
   margin-left: 10px;
-  padding: 8px 15px;
-  background-color: #999999;
+  padding: 8px 20px;
+  background-color: #868686;
   color: white;
   border: none;
   border-radius: 4px;
@@ -535,4 +538,54 @@ section.carousels h2 {
 
 .nav-dropdown .dropdown-content .recent-product a:hover {
   text-decoration: underline;
+}
+
+.cart-items {
+  margin-top: 40px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.cart-summary {
+  /*margin-top: 20px;*/
+  font-size: 18px;
+  text-align: right;
+}
+
+#checkout-button {
+  /* Your custom styles here */
+  background-color: rgb(255, 255, 255);
+  color: rgb(106, 106, 106);
+  font-weight: bold;
+  padding: 10px 20px;
+  margin-bottom: 500px;
+  border-radius: 5px;
+  box-shadow: #202020;
+}
+
+.cart-item-details h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.remove-item {
+  background-color: #f17509;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.remove-item:hover {
+  background-color: #d3230f;
 }

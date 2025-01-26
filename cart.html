@@ -3,33 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechnoConfort - Products</title>
-  <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
-  <link rel="stylesheet" href="./css/styles.css">
+  <title>Cart</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Header Section -->
-  <header class="header">
-    <div class="container">
-      <a href="index.html">
-        <img src="./content/images_icons/logo_TC.png" alt="TechnoConfort Logo" class="logo-icon">
-      </a>
-      <div class="search-bar">
-        <input type="text" placeholder="Search for furniture...">
-      </div>
-      <div class="header-buttons">
-        <a href="cart.html">
-          <button class="cart-button">
-            <img src="./content/images_icons/cart_icon2.png" class="cart-icon">
-            <span id="cart-count">0</span>
-          </button>
+  <!-- Include Header -->
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <a href="index.html">
+          <img src="./content/images_icons/logo_TC.png" alt="TechnoConfort Logo" class="logo-icon">
         </a>
-        <button class="account-button">
-          <img src="./content/images_icons/account_icon.png" class="account-icon"> My Account
-        </button>
+        <div class="search-bar">
+          <input type="text" placeholder="Search for furniture...">
+        </div>
+        <div class="header-buttons">
+          <a href="cart.html">
+            <button class="cart-button">
+              <img src="./content/images_icons/cart_icon2.png" class="cart-icon">
+              <span id="cart-count">0</span>
+            </button>
+          </a>
+          <button class="account-button">
+            <img src="./content/images_icons/account_icon.png" class="account-icon">
+            My Account
+          </button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 
   <!-- Navigation Bar -->
   <nav class="navbar">
@@ -65,24 +67,15 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="" alt="Category Hero" id="hero-image" class="hero-image">
-    <div class="hero-text">
-      <h1 id="category-title">Loading...</h1>
-      <p id="category-description"></p>
+  <!-- Cart Section -->
+  <main class="container">
+    <h1>Your Cart</h1>
+    <div id="cart-items" class="cart-items"></div>
+    <div class="cart-summary">
+      <p>Total: <span id="cart-total">$0.00</span></p>
+      <button id="checkout-button" class="action-button">Checkout</button>
     </div>
-  </section>
-
-  <!-- Category Info -->
-  <section class="category-info">
-    <p id="product-count">0 Products Available</p>
-  </section>
-
-  <!-- Product Gallery Section -->
-  <section id="product-gallery" class="gallery-container">
-    <!-- Products will be dynamically loaded here -->
-  </section>
+  </main>
 
   <!-- Footer Section -->
   <footer class="footer">
@@ -95,6 +88,6 @@
     </p>
   </footer>
 
-  <script src="./js/products.js"></script>
+  <script src="js/cart.js" defer></script>
 </body>
 </html>

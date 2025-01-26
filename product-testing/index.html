@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechnoConfort Home</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header class="header">
+    <div class="container">
+      <img src="../../content/images_icons/logo_TC.png" alt="logo-icon" class="logo-icon">
+      <div class="search-bar">
+        <input type="text" placeholder="Search for furniture...">
+      </div>
+      <div class="header-buttons">
+        <button class="cart-button">
+          <img src="../content/images_icons/cart_icon2.png" class="cart-icon">
+        </button>
+        <button class="account-button">
+          <img src="../content/images_icons/account_icon.png" class="account-icon">
+          My Account
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-button">Home</a>
+      <div class="nav-dropdown">
+        <button class="nav-button">Adult Bedrooms</button>
+        <div class="dropdown-content">
+          <a href="products.html?category=adult-bedrooms-full-rooms">Full Rooms</a>
+          <a href="products.html?category=adult-bedrooms-nightstands">Nightstands</a>
+          <a href="products.html?category=adult-bedrooms-vanities">Vanities</a>
+          <a href="products.html?category=adult-bedrooms-closets">Closets</a>
+          <a href="products.html?category=adult-bedrooms-beds">Beds</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-button">Kids Bedrooms</button>
+        <div class="dropdown-content">
+          <a href="products.html?category=kids-bedrooms-full-rooms">Full Rooms</a>
+          <a href="products.html?category=kids-bedrooms-nightstands">Nightstands</a>
+          <a href="products.html?category=kids-bedrooms-desks">Desks</a>
+          <a href="products.html?category=kids-bedrooms-vanities">Vanities</a>
+          <a href="products.html?category=kids-bedrooms-closets">Closets</a>
+          <a href="products.html?category=kids-bedrooms-beds">Beds</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <button class="nav-button">Recently Viewed</button>
+        <div class="dropdown-content" id="recently-viewed"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="../content/images_icons/1.jpg" alt="luna room" class="hero-image">
+    <h1>TechnoConfort</h1>
+    <p>We are a leading furniture wholesaler based in Sfax, Tunisia, specializing in high-quality, ready-to-assemble furniture kits.</p>
+    <p>Join us and experience modern furniture in 3D and AR.</p> 
+  </section>
+
+  <!-- Carousels Section -->
+  <section class="carousels">
+    <h2>Adult Furniture</h2>
+    <div class="carousel-container">
+      <button class="arrow left-arrow" id="adult-scroll-left">&lt</button>
+      <div class="carousel" id="adult-carousel"></div>
+      <button class="arrow right-arrow" id="adult-scroll-right">&gt</button>
+    </div>
+
+    <h2>Kids Furniture</h2>
+    <div class="carousel-container">
+      <button class="arrow left-arrow" id="kids-scroll-left">&lt</button>
+      <div class="carousel" id="kids-carousel"></div>
+      <button class="arrow right-arrow" id="kids-scroll-right">&gt</button>
+    </div>
+
+    <h2>Full Bedrooms</h2>
+    <div class="carousel-container">
+      <button class="arrow left-arrow" id="rooms-scroll-left">&lt</button>
+      <div class="carousel" id="rooms-carousel"></div>
+      <button class="arrow right-arrow" id="rooms-scroll-right">&gt</button>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <div class="feature">
+      <div class="icon">
+        <img src="../content/images_icons/delivery_icon.png">
+      </div>
+      <p>Fast Delivery</p>
+    </div>
+    <div class="feature">
+      <div class="icon">
+        <img src="../content/images_icons/card_icon.png">
+      </div>
+      <p>Secure Payment</p>
+    </div>
+    <div class="feature">
+      <div class="icon">
+        <img src="../content/images_icons/assembly_icon.png">
+      </div>
+      <p>Easy Assembly</p>
+    </div>
+    <div class="feature">
+      <div class="icon">
+        <img src="../content/images_icons/satisfaction_icon.png">
+      </div>
+      <p>Satisfaction Garanteed</p>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>Call us: +216 58 420 530</p>
+    <p>Email us: vente@technoconfort.com.tn</p>
+    <p>Location: Sfax, Mahdia Route Km 13</p>
+    <p><a href="https://www.facebook.com/profile.php?id=100088551716949" target="_blank">Facebook</a> | <a href="https://www.instagram.com/leco.mobilya/" >Instagram</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

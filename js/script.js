@@ -183,4 +183,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     container.addEventListener("scroll", handleScroll);
   });
+
+  // Populate "Recently Viewed"
+  const recentlyViewed = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
+  const recentlyViewedContainer = document.getElementById("recently-viewed");
+
+  recentlyViewedContainer.innerHTML = ""; // Clear previous content
+
+  if (recentlyViewed.length) {
+    recentlyViewed.forEach((product) => {
+      const productDiv = document.createElement("div");
+      productDiv.className = "recent-product";
+
+      const productLink = document.createElement("a");
+      productLink.textContent = product.name;
+      productLink.href = "product.html";
+
+      // Add the correct product data to localStorage on click
+      productLink.addEventListener("click", () => {
+        localStorage.setItem("selectedProduct", JSON.stringify(product));
+      });
+
+      productDiv.appendChild(productLink);
+      recentlyViewedContainer.appendChild(productDiv);
+    });
+  } else {
+    recentlyViewedContainer.innerHTML = "<p>No products viewed recently.</p>";
+  }
 });

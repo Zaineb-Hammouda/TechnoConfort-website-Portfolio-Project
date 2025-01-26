@@ -519,3 +519,19 @@ section.carousels h2 {
 .close-popup:hover {
   background-color: #b3721a;
 }
+
+.nav-dropdown .dropdown-content .recent-product {
+  margin: 10px 0;
+}
+
+.nav-dropdown .dropdown-content .recent-product a {
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  color: #5e5e5e;
+  padding: 8px 20px;
+}
+
+.nav-dropdown .dropdown-content .recent-product a:hover {
+  text-decoration: underline;
+}

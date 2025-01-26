@@ -14,13 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const modelViewer = document.getElementById("product-viewer");
   modelViewer.setAttribute("src", productData.modelUrl);
   modelViewer.setAttribute("camera-orbit", productData.cameraOrbit);
+  modelViewer.setAttribute("auto-rotate", "");
 
   // Enable rotation and reset
   modelViewer.addEventListener("mouseenter", () => {
-    modelViewer.setAttribute("auto-rotate", "");
+    modelViewer.removeAttribute("auto-rotate");
   });
   modelViewer.addEventListener("mouseleave", () => {
-    modelViewer.removeAttribute("auto-rotate");
+    modelViewer.setAttribute("auto-rotate", "");
     modelViewer.setAttribute("camera-orbit", productData.cameraOrbit);
   });
 

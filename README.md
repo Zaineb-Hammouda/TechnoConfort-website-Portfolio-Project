@@ -1,6 +1,6 @@
 # 🪑 TechnoConfort website Portfolio Project
 
-![Website Header](https://via.placeholder.com/1200x400?text=Furniture+Showcase+Project)
+![Website Header](./content/images_icons/header-image)
 
 Welcome to the **TechnoConfort website**, a dynamic and interactive furniture website built as part of my ALX Software Engineering front-end portfolio project. This project redefines online wholesale furniture browsing by integrating **3D product visualization** and **Augmented Reality (AR)** experiences. Explore beautiful furniture collections (created and 3d modeled by me) like never before, interact with products in real-time, and test them virtually in your space!
 
@@ -86,4 +86,11 @@ Unlike traditional furniture websites, this project brings the **showroom experi
 
   - python3 -m http.server 8000
 
-  Go to ur browser (preferrably chrome) and type in: **localhost:8000**
+  Go to ur browser (preferrably chrome), type in: **localhost:8000** and enjoy browsing ^^
+
+## 🤝 Connect with Me
+[Twitter]([URL](https://x.com/Zee_Hammouda))
+[Linkedin]([URL][https://x.com/Zee_Hammouda](https://www.linkedin.com/in/zainebhammouda/))
+
+Thank you for visiting my project! Your feedback and suggestions are always welcome. 🙌
+  

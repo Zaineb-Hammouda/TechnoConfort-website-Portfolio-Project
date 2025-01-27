@@ -1,6 +1,6 @@
 # 🪑 TechnoConfort website Portfolio Project
 
-![Website Header](./content/images_icons/header-image)
+![Website Header](./content/images_icons/header-image.png)
 
 Welcome to the **TechnoConfort website**, a dynamic and interactive furniture website built as part of my ALX Software Engineering front-end portfolio project. This project redefines online wholesale furniture browsing by integrating **3D product visualization** and **Augmented Reality (AR)** experiences. Explore beautiful furniture collections (created and 3d modeled by me) like never before, interact with products in real-time, and test them virtually in your space!
 

@@ -368,7 +368,6 @@ section.carousels h2 {
 
 .action-button:hover {
   background-color: #e2e2e2;
-  /*transform: translateY(-2px);*/
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -641,5 +640,32 @@ a {
 }
 
 a:hover {
+  text-decoration: underline;
+}
+
+.account-button {
+  background-color: #d48b1d;
+  color: white;
+  border: none;
+  padding: 20px 20px;
+  padding-top: 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block; /* Ensures proper alignment */
+  margin-bottom: 5px;
+}
+
+.account-button:hover {
+  background-color: #b3721a;
+}
+
+.account-button a {
+  text-decoration: none;
+  color: white;
+  margin: 20px 5px;
+  font-weight: bold;
+}
+
+.account-button a:hover {
   text-decoration: underline;
 }

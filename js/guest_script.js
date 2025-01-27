@@ -92,12 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const cameraOrbit = modelViewer.getAttribute("camera-orbit");
       originalCameraOrbits.set(modelViewer, cameraOrbit);
 
-      // Hover Effects for Product Viewer
-      //modelViewer.addEventListener("mouseenter", () => {
-        //console.log(`Hover started on ${product.name}`);
-        //modelViewer.setAttribute("auto-rotate", ""); // Start rotation
-      //});
-
       modelViewer.addEventListener("mouseleave", () => {
         console.log(`Hover ended on ${product.name}`);
         //modelViewer.removeAttribute("auto-rotate"); // Stop rotation
@@ -183,110 +177,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     container.addEventListener("scroll", handleScroll);
   });
+  const popup = document.getElementById("login-popup");
+  const closePopup = document.querySelector(".close-popup");
 
-  // Populate "Recently Viewed"
-  const recentlyViewed = JSON.parse(localStorage.getItem("recentlyViewed")) || [];
-  const recentlyViewedContainer = document.getElementById("recently-viewed");
-
-  recentlyViewedContainer.innerHTML = ""; // Clear previous content
-
-  if (recentlyViewed.length) {
-    recentlyViewed.forEach((product) => {
-      const productDiv = document.createElement("div");
-      productDiv.className = "recent-product";
-
-      const productLink = document.createElement("a");
-      productLink.textContent = product.name;
-      productLink.href = "product.html";
-
-      // Add the correct product data to localStorage on click
-      productLink.addEventListener("click", () => {
-        localStorage.setItem("selectedProduct", JSON.stringify(product));
-      });
-
-      productDiv.appendChild(productLink);
-      recentlyViewedContainer.appendChild(productDiv);
+  // Show pop-up when navbar links are clicked
+  document.querySelectorAll('[data-popup="true"]').forEach((element) => {
+    element.addEventListener("click", (event) => {
+      event.preventDefault();
+      popup.classList.remove("hidden");
     });
-  } else {
-    recentlyViewedContainer.innerHTML = "<p>No products viewed recently.</p>";
-  }
-
-
-  //add to cart functionnality
-  /*document.getElementById("add-to-cart").addEventListener("click", () => {
-    const quantity = parseInt(document.getElementById("quantity").value, 10);
-    if (quantity <= 0) {
-        alert("Please enter a valid quantity.");
-        return;
-    }
-
-    // Fetch cart from localStorage
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-    // Check if the product already exists in the cart
-    const existingProduct = cart.find((item) => item.name === productData.name);
-    if (existingProduct) {
-        existingProduct.quantity += quantity;
-    } else {
-        cart.push({
-            name: productData.name,
-            price: productData.price,
-            quantity,
-        });
-    }
-
-    // Save updated cart to localStorage
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    // Update cart count in the header
-    updateCartCount();
-
-    alert(`${quantity} ${productData.name}(s) added to your cart!`);
   });
 
-  // Update cart count in the header
-  function updateCartCount() {
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-      document.getElementById("cart-count").textContent = totalQuantity;
-  }
-
-  // Initialize cart count on page load
-  updateCartCount();*/
-
-  //add to cart functionnality
-  document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("action-button")) {
-      const productName = e.target.closest(".product-card").querySelector(".product-name").textContent;
-      const productPrice = e.target.closest(".product-card").querySelector(".product-price").textContent;
-  
-      // Fetch cart from localStorage
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  
-      // Check if the product already exists in the cart
-      const existingProduct = cart.find((item) => item.name === productName);
-      if (existingProduct) {
-        existingProduct.quantity += 1;
-      } else {
-        cart.push({ name: productName, price: productPrice, quantity: 1 });
-      }
-  
-      // Save cart back to localStorage
-      localStorage.setItem("cart", JSON.stringify(cart));
-  
-      // Update cart count in the header
-      updateCartCount();
-
-      alert(`${quantity} ${productData.name}(s) added to your cart!`);
-    }
+  // Close the pop-up
+  closePopup.addEventListener("click", () => {
+    popup.classList.add("hidden");
   });
-  // Update cart count in the header
-  function updateCartCount() {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
-    document.getElementById("cart-count").textContent = totalQuantity;
-  }
-
-  // Initialize cart count on page load
-  updateCartCount();
 });

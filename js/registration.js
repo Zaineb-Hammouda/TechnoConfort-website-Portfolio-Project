@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       alert("Registration successful! Redirecting to homepage...");
 
-      // Redirect to index.html
-      window.location.href = "../index.html";
+      // Redirect to user_home.html
+      window.location.href = "../user_home.html";
     }
   });
 });

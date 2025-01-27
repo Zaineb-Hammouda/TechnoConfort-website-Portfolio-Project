@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechnoConfort Home</title>
+  <title>TechnoConfort Guest</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer@latest/dist/model-viewer.min.js"></script>
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -11,22 +11,18 @@
   <!-- Header Section -->
   <header class="header">
     <div class="container">
-      <a href="index.html">
-        <img src="./content/images_icons/logo_TC.png" alt="TechnoConfort Logo" class="logo-icon">
-      </a>
+      <img src="./content/images_icons/logo_TC.png" alt="TechnoConfort Logo" class="logo-icon">
       <div class="search-bar">
-        <input type="text" placeholder="Search for furniture...">
+        <input type="text" placeholder="Search for furniture..." disabled>
       </div>
       <div class="header-buttons">
-        <a href="cart.html">
-          <button class="cart-button">
-            <img src="./content/images_icons/cart_icon2.png" class="cart-icon">
-            <span id="cart-count">0</span>
-          </button>
+        <button class="cart-button" disabled>
+          <img src="./content/images_icons/cart_icon2.png" class="cart-icon">
+          <span id="cart-count">0</span>
+        </button>
         </a>
         <button class="account-button">
-          <img src="./content/images_icons/account_icon.png" class="account-icon">
-          My Account
+          <a href="login.html">Login</a> / <a href="registration.html">Sign Up</a>
         </button>
       </div>
     </div>
@@ -35,33 +31,15 @@
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container">
-      <a href="index.html" class="nav-button">Home</a>
+      <a href="#" class="nav-button" data-popup="true">Home</a>
       <div class="nav-dropdown">
-        <button class="nav-button">Adult Bedrooms</button>
-        <div class="dropdown-content">
-          <a href="products.html?category=adult-bedrooms-full-rooms">Full Rooms</a>
-          <a href="products.html?category=adult-bedrooms-nightstands">Nightstands</a>
-          <a href="products.html?category=adult-bedrooms-vanities">Vanities</a>
-          <a href="products.html?category=adult-bedrooms-closets">Closets</a>
-          <a href="products.html?category=adult-bedrooms-beds">Beds</a>
-        </div>
+        <button class="nav-button" data-popup="true">Adult Bedrooms</button>
       </div>
       <div class="nav-dropdown">
-        <button class="nav-button">Kids Bedrooms</button>
-        <div class="dropdown-content">
-          <a href="products.html?category=kids-bedrooms-full-rooms">Full Rooms</a>
-          <a href="products.html?category=kids-bedrooms-nightstands">Nightstands</a>
-          <a href="products.html?category=kids-bedrooms-desks">Desks</a>
-          <a href="products.html?category=kids-bedrooms-vanities">Vanities</a>
-          <a href="products.html?category=kids-bedrooms-closets">Closets</a>
-          <a href="products.html?category=kids-bedrooms-beds">Beds</a>
-        </div>
+        <button class="nav-button" data-popup="true">Kids Bedrooms</button>
       </div>
       <div class="nav-dropdown">
-        <button class="nav-button">Recently Viewed</button>
-        <div class="dropdown-content" id="recently-viewed">
-          <p>No products viewed recently.</p> 
-        </div>
+        <button class="nav-button" data-popup="true">Recently Viewed</button>
       </div>
     </div>
   </nav>
@@ -69,9 +47,8 @@
   <!-- Hero Section -->
   <section class="hero">
     <img src="./content/images_icons/1.jpg" alt="luna room" class="hero-image">
-    <h1>TechnoConfort</h1>
-    <p>We are a leading furniture wholesaler based in Sfax, Tunisia, specializing in high-quality, ready-to-assemble furniture kits.</p>
-    <p>Join us and experience modern furniture in 3D and AR.</p> 
+    <h1>Welcome to TechnoConfort</h1>
+    <p>Explore our premium furniture in 3D and AR. Log in or sign up to unlock the full experience!</p>
   </section>
 
   <!-- Carousels Section -->
@@ -134,6 +111,17 @@
     <p><a href="https://www.facebook.com/profile.php?id=100088551716949" target="_blank">Facebook</a> | <a href="https://www.instagram.com/leco.mobilya/" >Instagram</a></p>
   </footer>
 
-  <script src="./js/script.js"></script>
+  <!-- Pop-up Modal -->
+  <div class="popup hidden" id="login-popup">
+    <div class="popup-content">
+      <h3>Please SignUp</h3>
+      <p>You need to log in or sign up to access our products.</p>
+      <a href="login.html" class="action-button">Login</a>
+      <a href="registration.html" class="action-button">Sign Up</a>
+      <button class="close-popup">Close</button>
+    </div>
+  </div>
+
+  <script src="js/guest_script.js"></script>
 </body>
 </html>

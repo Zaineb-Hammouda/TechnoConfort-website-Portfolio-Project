@@ -91,7 +91,7 @@ Unlike traditional furniture websites, this project brings the **showroom experi
 ## 🤝 Connect with Me
 [Twitter](https://x.com/Zee_Hammouda)
 
-[Linkedin]([https://x.com/Zee_Hammouda](https://www.linkedin.com/in/zainebhammouda/))
+[Linkedin](https://www.linkedin.com/in/zainebhammouda/)
 
 Thank you for visiting my project! Your feedback and suggestions are always welcome. 🙌
   

@@ -88,6 +88,8 @@ Unlike traditional furniture websites, this project brings the **showroom experi
 
   Go to ur browser (preferrably chrome), type in: **localhost:8000** and enjoy browsing ^^
 
+  (if you want to skip making an account and registering or if there's a bug, type in **localhost:8000/user_home.html** instead, in your browser)
+
 ## 🤝 Connect with Me
 [Twitter](https://x.com/Zee_Hammouda)
 

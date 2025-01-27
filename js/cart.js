@@ -25,7 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <div>
           <h3>${item.name}</h3>
           <p>${item.price}</p>
-          <p>Quantity: <input type="number" value="${item.quantity}" data-index="${index}" class="quantity-input"></p>
           <!-- Add the 3D model viewer -->
             <model-viewer
               src="${item.modelUrl}"
@@ -33,8 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
               camera-controls
               shadow-intensity="1"
               interaction-prompt="none"
-              style="width: 300px; height: 300px;"
+              camera-orbit="${item.cameraOrbit}"
+              style="width: 200px; height: 200px;"
             ></model-viewer>
+            <p>Quantity: <input type="number" value="${item.quantity}" data-index="${index}" class="quantity-input"></p>
         </div>
         <button class="remove-item" data-index="${index}">Remove</button>
       `;

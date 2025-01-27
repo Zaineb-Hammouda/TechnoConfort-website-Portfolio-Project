@@ -165,7 +165,8 @@ document.addEventListener("DOMContentLoaded", () => {
             name: product.name,
             price: product.price,
             quantity: 1,
-            modelUrl: product.modelUrl
+            modelUrl: product.modelUrl,
+            cameraOrbit: product.cameraOrbit
           });
         }
 

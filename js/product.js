@@ -97,7 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
             name: productData.name,
             price: productData.price,
             quantity,
-            modelUrl : productData.modelUrl
+            modelUrl: productData.modelUrl,
+            cameraOrbit: productData.cameraOrbit
         });
     }
 

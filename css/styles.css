@@ -557,6 +557,7 @@ section.carousels h2 {
 .cart-summary {
   /*margin-top: 20px;*/
   font-size: 18px;
+  font-weight: bold;
   text-align: right;
 }
 
@@ -577,11 +578,12 @@ section.carousels h2 {
 }
 
 .remove-item {
-  background-color: #f17509;
+  background-color: #d67724;
   color: white;
+  font-size: 14px;
   border: none;
   border-radius: 4px;
-  padding: 5px 10px;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
@@ -676,4 +678,5 @@ model-viewer {
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 10px;
+  align-self: center;
 }

@@ -165,6 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
             name: product.name,
             price: product.price,
             quantity: 1,
+            modelUrl: product.modelUrl
           });
         }
 

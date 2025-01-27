@@ -26,6 +26,15 @@ document.addEventListener("DOMContentLoaded", () => {
           <h3>${item.name}</h3>
           <p>${item.price}</p>
           <p>Quantity: <input type="number" value="${item.quantity}" data-index="${index}" class="quantity-input"></p>
+          <!-- Add the 3D model viewer -->
+            <model-viewer
+              src="${item.modelUrl}"
+              alt="${item.name} model"
+              camera-controls
+              shadow-intensity="1"
+              interaction-prompt="none"
+              style="width: 300px; height: 300px;"
+            ></model-viewer>
         </div>
         <button class="remove-item" data-index="${index}">Remove</button>
       `;

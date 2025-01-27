@@ -89,8 +89,9 @@ Unlike traditional furniture websites, this project brings the **showroom experi
   Go to ur browser (preferrably chrome), type in: **localhost:8000** and enjoy browsing ^^
 
 ## 🤝 Connect with Me
-[Twitter]([URL](https://x.com/Zee_Hammouda))
-[Linkedin]([URL][https://x.com/Zee_Hammouda](https://www.linkedin.com/in/zainebhammouda/))
+[Twitter](https://x.com/Zee_Hammouda)
+
+[Linkedin]([https://x.com/Zee_Hammouda](https://www.linkedin.com/in/zainebhammouda/))
 
 Thank you for visiting my project! Your feedback and suggestions are always welcome. 🙌
   

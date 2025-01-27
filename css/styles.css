@@ -599,7 +599,7 @@ section.carousels h2 {
 }
 
 h1 {
-  text-align: center;
+  /*text-align: center;*/
   color: #333;
   margin-bottom: 20px;
 }
@@ -629,10 +629,10 @@ button:hover {
   background-color: #b3721a;
 }
 
-p {
+/*p {
   text-align: center;
   margin-top: 15px;
-}
+}*/
 
 a {
   color: #d48b1d;
